@@ -17,7 +17,7 @@
                BlueprintIdentifier = "AF8A921F18D0EEA800583A42"
                BuildableName = "JukeBox.app"
                BlueprintName = "JukeBox"
-               ReferencedContainer = "container:JukeBox.xcodeproj">
+               ReferencedContainer = "container:Jukebox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "AF8A923A18D0EEA800583A42"
                BuildableName = "JukeBoxTests.xctest"
                BlueprintName = "JukeBoxTests"
-               ReferencedContainer = "container:JukeBox.xcodeproj">
+               ReferencedContainer = "container:Jukebox.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "AF8A921F18D0EEA800583A42"
             BuildableName = "JukeBox.app"
             BlueprintName = "JukeBox"
-            ReferencedContainer = "container:JukeBox.xcodeproj">
+            ReferencedContainer = "container:Jukebox.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "AF8A921F18D0EEA800583A42"
             BuildableName = "JukeBox.app"
             BlueprintName = "JukeBox"
-            ReferencedContainer = "container:JukeBox.xcodeproj">
+            ReferencedContainer = "container:Jukebox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "AF8A921F18D0EEA800583A42"
             BuildableName = "JukeBox.app"
             BlueprintName = "JukeBox"
-            ReferencedContainer = "container:JukeBox.xcodeproj">
+            ReferencedContainer = "container:Jukebox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

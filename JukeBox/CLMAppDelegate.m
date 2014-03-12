@@ -7,13 +7,21 @@
 //
 
 #import "CLMAppDelegate.h"
+#import "CLMRootViewController.h"
 
+@interface CLMAppDelegate ()
+
+@property (nonatomic, strong) CLMRootViewController *rootViewController;
+@end
 @implementation CLMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.rootViewController = [[CLMRootViewController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.window.rootViewController = self.rootViewController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
