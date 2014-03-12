@@ -44,6 +44,8 @@ static NSString * const JukeBoxServiceType = @"jukebox-service";
     self = [super init];
     if (self) {
         self.myPeerID = [[MCPeerID alloc] initWithDisplayName:[[UIDevice currentDevice] name]];
+        self.mutablePeers = [[NSMutableArray alloc] init];
+        self.connectedPeers = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -60,6 +62,7 @@ static NSString * const JukeBoxServiceType = @"jukebox-service";
 - (void)startBrowsing {
     self.browser = [[MCNearbyServiceBrowser alloc] initWithPeer:self.myPeerID serviceType:JukeBoxServiceType];
     self.browser.delegate = self;
+    [self.browser startBrowsingForPeers];
 }
 #pragma mark - MCSessionDelegate
 
