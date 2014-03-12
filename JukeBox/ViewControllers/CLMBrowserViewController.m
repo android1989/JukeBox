@@ -1,21 +1,21 @@
 //
-//  CLMRootViewController.m
+//  CLMBrowserViewController.m
 //  Jukebox
 //
 //  Created by Andrew Hulsizer on 3/12/14.
 //  Copyright (c) 2014 Classy Monsters. All rights reserved.
 //
 
-#import "CLMRootViewController.h"
 #import "CLMBrowserViewController.h"
+#import "CLMConstants.h"
 #import "CLMMultipeerListener.h"
 
-@interface CLMRootViewController ()
+@interface CLMBrowserViewController ()
 
-@property (nonatomic, strong) CLMBrowserViewController *browserViewController;
+@property (nonatomic, strong) IBOutlet UILabel *countLabel;
 @end
 
-@implementation CLMRootViewController
+@implementation CLMBrowserViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,13 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [CLMMultipeerListener startUp];
     // Do any additional setup after loading the view from its nib.
-    self.browserViewController = [[CLMBrowserViewController alloc] init];
-    
-    [self addChildViewController:self.browserViewController];
-    [self.browserViewController willMoveToParentViewController:self];
-    [self.view addSubview:self.browserViewController.view];
+    [self registerNotifications];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,4 +39,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)registerNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(peerlistDidChange:) name:kPeersDidChangeNotification object:nil];
+}
+
+#pragma mark - Notifications
+
+- (void)peerlistDidChange:(NSNotification *)notification {
+    NSArray *peers = [[CLMMultipeerListener sharedInstance] peers];
+    self.countLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)peers.count];
+}
 @end

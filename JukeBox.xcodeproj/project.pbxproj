@@ -22,6 +22,11 @@
 		AF8A924918D0EEA800583A42 /* JukeBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A924818D0EEA800583A42 /* JukeBoxTests.m */; };
 		AF8A925918D0F10500583A42 /* CLMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A925718D0F10500583A42 /* CLMRootViewController.m */; };
 		AF8A925A18D0F10500583A42 /* CLMRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8A925818D0F10500583A42 /* CLMRootViewController.xib */; };
+		AF8A925E18D0F69000583A42 /* CLMMultipeerListener.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A925D18D0F69000583A42 /* CLMMultipeerListener.m */; };
+		AF8A926018D0F6A600583A42 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A925F18D0F6A600583A42 /* MultipeerConnectivity.framework */; };
+		AF8A926318D0FBC200583A42 /* CLMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A926218D0FBC200583A42 /* CLMConstants.m */; };
+		AF8A926718D0FC6400583A42 /* CLMBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A926518D0FC6400583A42 /* CLMBrowserViewController.m */; };
+		AF8A926818D0FC6400583A42 /* CLMBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8A926618D0FC6400583A42 /* CLMBrowserViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,14 @@
 		AF8A925618D0F10500583A42 /* CLMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMRootViewController.h; sourceTree = "<group>"; };
 		AF8A925718D0F10500583A42 /* CLMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMRootViewController.m; sourceTree = "<group>"; };
 		AF8A925818D0F10500583A42 /* CLMRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMRootViewController.xib; sourceTree = "<group>"; };
+		AF8A925C18D0F69000583A42 /* CLMMultipeerListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMMultipeerListener.h; sourceTree = "<group>"; };
+		AF8A925D18D0F69000583A42 /* CLMMultipeerListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMMultipeerListener.m; sourceTree = "<group>"; };
+		AF8A925F18D0F6A600583A42 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		AF8A926118D0FBC200583A42 /* CLMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMConstants.h; sourceTree = "<group>"; };
+		AF8A926218D0FBC200583A42 /* CLMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMConstants.m; sourceTree = "<group>"; };
+		AF8A926418D0FC6400583A42 /* CLMBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMBrowserViewController.h; sourceTree = "<group>"; };
+		AF8A926518D0FC6400583A42 /* CLMBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMBrowserViewController.m; sourceTree = "<group>"; };
+		AF8A926618D0FC6400583A42 /* CLMBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMBrowserViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8A926018D0F6A600583A42 /* MultipeerConnectivity.framework in Frameworks */,
 				AF8A922618D0EEA800583A42 /* CoreGraphics.framework in Frameworks */,
 				AF8A922818D0EEA800583A42 /* UIKit.framework in Frameworks */,
 				AF8A922418D0EEA800583A42 /* Foundation.framework in Frameworks */,
@@ -106,6 +120,7 @@
 		AF8A922218D0EEA800583A42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF8A925F18D0F6A600583A42 /* MultipeerConnectivity.framework */,
 				AF8A922318D0EEA800583A42 /* Foundation.framework */,
 				AF8A922518D0EEA800583A42 /* CoreGraphics.framework */,
 				AF8A922718D0EEA800583A42 /* UIKit.framework */,
@@ -169,6 +184,9 @@
 		AF8A925318D0F09F00583A42 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				AF8A925B18D0F66B00583A42 /* MultipeerListener */,
+				AF8A926118D0FBC200583A42 /* CLMConstants.h */,
+				AF8A926218D0FBC200583A42 /* CLMConstants.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -179,6 +197,9 @@
 				AF8A925618D0F10500583A42 /* CLMRootViewController.h */,
 				AF8A925718D0F10500583A42 /* CLMRootViewController.m */,
 				AF8A925818D0F10500583A42 /* CLMRootViewController.xib */,
+				AF8A926418D0FC6400583A42 /* CLMBrowserViewController.h */,
+				AF8A926518D0FC6400583A42 /* CLMBrowserViewController.m */,
+				AF8A926618D0FC6400583A42 /* CLMBrowserViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -188,6 +209,15 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AF8A925B18D0F66B00583A42 /* MultipeerListener */ = {
+			isa = PBXGroup;
+			children = (
+				AF8A925C18D0F69000583A42 /* CLMMultipeerListener.h */,
+				AF8A925D18D0F69000583A42 /* CLMMultipeerListener.m */,
+			);
+			name = MultipeerListener;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +270,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Classy Monsters";
 				TargetAttributes = {
+					AF8A921F18D0EEA800583A42 = {
+						DevelopmentTeam = VF4S586883;
+					};
 					AF8A923A18D0EEA800583A42 = {
 						TestTargetID = AF8A921F18D0EEA800583A42;
 					};
@@ -268,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8A926818D0FC6400583A42 /* CLMBrowserViewController.xib in Resources */,
 				AF8A922E18D0EEA800583A42 /* InfoPlist.strings in Resources */,
 				AF8A925A18D0F10500583A42 /* CLMRootViewController.xib in Resources */,
 				AF8A923618D0EEA800583A42 /* Images.xcassets in Resources */,
@@ -322,8 +356,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8A926318D0FBC200583A42 /* CLMConstants.m in Sources */,
 				AF8A923018D0EEA800583A42 /* main.m in Sources */,
 				AF8A923418D0EEA800583A42 /* CLMAppDelegate.m in Sources */,
+				AF8A925E18D0F69000583A42 /* CLMMultipeerListener.m in Sources */,
+				AF8A926718D0FC6400583A42 /* CLMBrowserViewController.m in Sources */,
 				AF8A925918D0F10500583A42 /* CLMRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,10 +481,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JukeBox/JukeBox-Prefix.pch";
 				INFOPLIST_FILE = "JukeBox/JukeBox-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -458,10 +499,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JukeBox/JukeBox-Prefix.pch";
 				INFOPLIST_FILE = "JukeBox/JukeBox-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
