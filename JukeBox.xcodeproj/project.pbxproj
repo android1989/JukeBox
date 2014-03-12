@@ -27,6 +27,8 @@
 		AF8A926318D0FBC200583A42 /* CLMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A926218D0FBC200583A42 /* CLMConstants.m */; };
 		AF8A926718D0FC6400583A42 /* CLMBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A926518D0FC6400583A42 /* CLMBrowserViewController.m */; };
 		AF8A926818D0FC6400583A42 /* CLMBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8A926618D0FC6400583A42 /* CLMBrowserViewController.xib */; };
+		AF8A926B18D10A4D00583A42 /* CLMDisplayNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A926A18D10A4D00583A42 /* CLMDisplayNameCell.m */; };
+		AF8A926D18D10A5C00583A42 /* CLMDisplayNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8A926C18D10A5C00583A42 /* CLMDisplayNameCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,9 @@
 		AF8A926418D0FC6400583A42 /* CLMBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMBrowserViewController.h; sourceTree = "<group>"; };
 		AF8A926518D0FC6400583A42 /* CLMBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMBrowserViewController.m; sourceTree = "<group>"; };
 		AF8A926618D0FC6400583A42 /* CLMBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMBrowserViewController.xib; sourceTree = "<group>"; };
+		AF8A926918D10A4D00583A42 /* CLMDisplayNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMDisplayNameCell.h; sourceTree = "<group>"; };
+		AF8A926A18D10A4D00583A42 /* CLMDisplayNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMDisplayNameCell.m; sourceTree = "<group>"; };
+		AF8A926C18D10A5C00583A42 /* CLMDisplayNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMDisplayNameCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +212,9 @@
 		AF8A925518D0F09F00583A42 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AF8A926918D10A4D00583A42 /* CLMDisplayNameCell.h */,
+				AF8A926A18D10A4D00583A42 /* CLMDisplayNameCell.m */,
+				AF8A926C18D10A5C00583A42 /* CLMDisplayNameCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8A926D18D10A5C00583A42 /* CLMDisplayNameCell.xib in Resources */,
 				AF8A926818D0FC6400583A42 /* CLMBrowserViewController.xib in Resources */,
 				AF8A922E18D0EEA800583A42 /* InfoPlist.strings in Resources */,
 				AF8A925A18D0F10500583A42 /* CLMRootViewController.xib in Resources */,
@@ -356,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8A926B18D10A4D00583A42 /* CLMDisplayNameCell.m in Sources */,
 				AF8A926318D0FBC200583A42 /* CLMConstants.m in Sources */,
 				AF8A923018D0EEA800583A42 /* main.m in Sources */,
 				AF8A923418D0EEA800583A42 /* CLMAppDelegate.m in Sources */,

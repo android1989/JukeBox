@@ -19,7 +19,7 @@ static NSString * const JukeBoxServiceType = @"jukebox-service";
 @property (nonatomic, strong) MCNearbyServiceAdvertiser *advertiser;
 @property (nonatomic, strong) MCNearbyServiceBrowser *browser;
 
-@property (nonatomic, strong) NSMutableArray *mutablePeers;
+@property (nonatomic, strong) NSMutableSet *mutablePeers;
 @property (nonatomic, strong) NSMutableArray *connectedPeers;
 @end
 
@@ -44,7 +44,7 @@ static NSString * const JukeBoxServiceType = @"jukebox-service";
     self = [super init];
     if (self) {
         self.myPeerID = [[MCPeerID alloc] initWithDisplayName:[[UIDevice currentDevice] name]];
-        self.mutablePeers = [[NSMutableArray alloc] init];
+        self.mutablePeers = [[NSMutableSet alloc] init];
         self.connectedPeers = [[NSMutableArray alloc] init];
     }
     return self;
@@ -109,6 +109,7 @@ static NSString * const JukeBoxServiceType = @"jukebox-service";
 #pragma mark - MCNearbyServiceAdvertiserDelegate
 
 - (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info {
+    
     [self.mutablePeers addObject:peerID];
     [[NSNotificationCenter defaultCenter] postNotificationName:kPeersDidChangeNotification object:nil];
 }
@@ -120,6 +121,6 @@ static NSString * const JukeBoxServiceType = @"jukebox-service";
 }
 
 - (NSArray *)peers {
-    return _mutablePeers;
+    return [_mutablePeers allObjects];
 }
 @end

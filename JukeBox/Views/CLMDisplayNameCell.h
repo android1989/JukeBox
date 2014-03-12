@@ -1,5 +1,5 @@
 //
-//  CLMBrowserViewController.h
+//  CLMDisplayNameCell.h
 //  Jukebox
 //
 //  Created by Andrew Hulsizer on 3/12/14.
@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface CLMBrowserViewController : UIViewController
+@interface CLMDisplayNameCell : UICollectionViewCell
 
+- (void)configureWithPeer:(MCPeerID *)peerID;
 @end

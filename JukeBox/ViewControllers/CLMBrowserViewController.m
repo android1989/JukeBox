@@ -9,10 +9,13 @@
 #import "CLMBrowserViewController.h"
 #import "CLMConstants.h"
 #import "CLMMultipeerListener.h"
+#import "CLMDisplayNameCell.h"
 
-@interface CLMBrowserViewController ()
+@interface CLMBrowserViewController () <UICollectionViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UILabel *countLabel;
+@property (nonatomic, strong) NSArray *peers;
+@property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @end
 
 @implementation CLMBrowserViewController
@@ -31,6 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self registerNotifications];
+    [self registerCells];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,10 +47,29 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(peerlistDidChange:) name:kPeersDidChangeNotification object:nil];
 }
 
+- (void)registerCells {
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([CLMDisplayNameCell class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([CLMDisplayNameCell class])];
+}
+
 #pragma mark - Notifications
 
 - (void)peerlistDidChange:(NSNotification *)notification {
-    NSArray *peers = [[CLMMultipeerListener sharedInstance] peers];
-    self.countLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)peers.count];
+    self.peers = [[CLMMultipeerListener sharedInstance] peers];
+    [self.collectionView reloadData];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.peers count];
+}
+
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CLMDisplayNameCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CLMDisplayNameCell class]) forIndexPath:indexPath];
+    
+    [cell configureWithPeer:self.peers[indexPath.item]];
+    
+    return cell;
 }
 @end
