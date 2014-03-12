@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF8A922418D0EEA800583A42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922318D0EEA800583A42 /* Foundation.framework */; };
+		AF8A922618D0EEA800583A42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922518D0EEA800583A42 /* CoreGraphics.framework */; };
+		AF8A922818D0EEA800583A42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922718D0EEA800583A42 /* UIKit.framework */; };
+		AF8A922E18D0EEA800583A42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF8A922C18D0EEA800583A42 /* InfoPlist.strings */; };
+		AF8A923018D0EEA800583A42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A922F18D0EEA800583A42 /* main.m */; };
+		AF8A923418D0EEA800583A42 /* CLMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A923318D0EEA800583A42 /* CLMAppDelegate.m */; };
+		AF8A923618D0EEA800583A42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF8A923518D0EEA800583A42 /* Images.xcassets */; };
+		AF8A923D18D0EEA800583A42 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A923C18D0EEA800583A42 /* XCTest.framework */; };
+		AF8A923E18D0EEA800583A42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922318D0EEA800583A42 /* Foundation.framework */; };
+		AF8A923F18D0EEA800583A42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922718D0EEA800583A42 /* UIKit.framework */; };
+		AF8A924718D0EEA800583A42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF8A924518D0EEA800583A42 /* InfoPlist.strings */; };
+		AF8A924918D0EEA800583A42 /* JukeBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A924818D0EEA800583A42 /* JukeBoxTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF8A924018D0EEA800583A42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF8A921818D0EEA800583A42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF8A921F18D0EEA800583A42;
+			remoteInfo = JukeBox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF8A922018D0EEA800583A42 /* JukeBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JukeBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF8A922318D0EEA800583A42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AF8A922518D0EEA800583A42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AF8A922718D0EEA800583A42 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AF8A922B18D0EEA800583A42 /* JukeBox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JukeBox-Info.plist"; sourceTree = "<group>"; };
+		AF8A922D18D0EEA800583A42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF8A922F18D0EEA800583A42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF8A923118D0EEA800583A42 /* JukeBox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JukeBox-Prefix.pch"; sourceTree = "<group>"; };
+		AF8A923218D0EEA800583A42 /* CLMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLMAppDelegate.h; sourceTree = "<group>"; };
+		AF8A923318D0EEA800583A42 /* CLMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLMAppDelegate.m; sourceTree = "<group>"; };
+		AF8A923518D0EEA800583A42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AF8A923B18D0EEA800583A42 /* JukeBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JukeBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF8A923C18D0EEA800583A42 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AF8A924418D0EEA800583A42 /* JukeBoxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JukeBoxTests-Info.plist"; sourceTree = "<group>"; };
+		AF8A924618D0EEA800583A42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF8A924818D0EEA800583A42 /* JukeBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JukeBoxTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF8A921D18D0EEA800583A42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF8A922618D0EEA800583A42 /* CoreGraphics.framework in Frameworks */,
+				AF8A922818D0EEA800583A42 /* UIKit.framework in Frameworks */,
+				AF8A922418D0EEA800583A42 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF8A923818D0EEA800583A42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF8A923D18D0EEA800583A42 /* XCTest.framework in Frameworks */,
+				AF8A923F18D0EEA800583A42 /* UIKit.framework in Frameworks */,
+				AF8A923E18D0EEA800583A42 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF8A921718D0EEA800583A42 = {
+			isa = PBXGroup;
+			children = (
+				AF8A922918D0EEA800583A42 /* JukeBox */,
+				AF8A924218D0EEA800583A42 /* JukeBoxTests */,
+				AF8A922218D0EEA800583A42 /* Frameworks */,
+				AF8A922118D0EEA800583A42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF8A922118D0EEA800583A42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF8A922018D0EEA800583A42 /* JukeBox.app */,
+				AF8A923B18D0EEA800583A42 /* JukeBoxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF8A922218D0EEA800583A42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF8A922318D0EEA800583A42 /* Foundation.framework */,
+				AF8A922518D0EEA800583A42 /* CoreGraphics.framework */,
+				AF8A922718D0EEA800583A42 /* UIKit.framework */,
+				AF8A923C18D0EEA800583A42 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF8A922918D0EEA800583A42 /* JukeBox */ = {
+			isa = PBXGroup;
+			children = (
+				AF8A923218D0EEA800583A42 /* CLMAppDelegate.h */,
+				AF8A923318D0EEA800583A42 /* CLMAppDelegate.m */,
+				AF8A923518D0EEA800583A42 /* Images.xcassets */,
+				AF8A922A18D0EEA800583A42 /* Supporting Files */,
+			);
+			path = JukeBox;
+			sourceTree = "<group>";
+		};
+		AF8A922A18D0EEA800583A42 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF8A922B18D0EEA800583A42 /* JukeBox-Info.plist */,
+				AF8A922C18D0EEA800583A42 /* InfoPlist.strings */,
+				AF8A922F18D0EEA800583A42 /* main.m */,
+				AF8A923118D0EEA800583A42 /* JukeBox-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF8A924218D0EEA800583A42 /* JukeBoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF8A924818D0EEA800583A42 /* JukeBoxTests.m */,
+				AF8A924318D0EEA800583A42 /* Supporting Files */,
+			);
+			path = JukeBoxTests;
+			sourceTree = "<group>";
+		};
+		AF8A924318D0EEA800583A42 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF8A924418D0EEA800583A42 /* JukeBoxTests-Info.plist */,
+				AF8A924518D0EEA800583A42 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF8A921F18D0EEA800583A42 /* JukeBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF8A924C18D0EEA800583A42 /* Build configuration list for PBXNativeTarget "JukeBox" */;
+			buildPhases = (
+				AF8A921C18D0EEA800583A42 /* Sources */,
+				AF8A921D18D0EEA800583A42 /* Frameworks */,
+				AF8A921E18D0EEA800583A42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JukeBox;
+			productName = JukeBox;
+			productReference = AF8A922018D0EEA800583A42 /* JukeBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF8A923A18D0EEA800583A42 /* JukeBoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF8A924F18D0EEA800583A42 /* Build configuration list for PBXNativeTarget "JukeBoxTests" */;
+			buildPhases = (
+				AF8A923718D0EEA800583A42 /* Sources */,
+				AF8A923818D0EEA800583A42 /* Frameworks */,
+				AF8A923918D0EEA800583A42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF8A924118D0EEA800583A42 /* PBXTargetDependency */,
+			);
+			name = JukeBoxTests;
+			productName = JukeBoxTests;
+			productReference = AF8A923B18D0EEA800583A42 /* JukeBoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF8A921818D0EEA800583A42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CLM;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Classy Monsters";
+				TargetAttributes = {
+					AF8A923A18D0EEA800583A42 = {
+						TestTargetID = AF8A921F18D0EEA800583A42;
+					};
+				};
+			};
+			buildConfigurationList = AF8A921B18D0EEA800583A42 /* Build configuration list for PBXProject "JukeBox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AF8A921718D0EEA800583A42;
+			productRefGroup = AF8A922118D0EEA800583A42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF8A921F18D0EEA800583A42 /* JukeBox */,
+				AF8A923A18D0EEA800583A42 /* JukeBoxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF8A921E18D0EEA800583A42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF8A922E18D0EEA800583A42 /* InfoPlist.strings in Resources */,
+				AF8A923618D0EEA800583A42 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF8A923918D0EEA800583A42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF8A924718D0EEA800583A42 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF8A921C18D0EEA800583A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF8A923018D0EEA800583A42 /* main.m in Sources */,
+				AF8A923418D0EEA800583A42 /* CLMAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF8A923718D0EEA800583A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF8A924918D0EEA800583A42 /* JukeBoxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF8A924118D0EEA800583A42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF8A921F18D0EEA800583A42 /* JukeBox */;
+			targetProxy = AF8A924018D0EEA800583A42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF8A922C18D0EEA800583A42 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF8A922D18D0EEA800583A42 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AF8A924518D0EEA800583A42 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF8A924618D0EEA800583A42 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF8A924A18D0EEA800583A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF8A924B18D0EEA800583A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF8A924D18D0EEA800583A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JukeBox/JukeBox-Prefix.pch";
+				INFOPLIST_FILE = "JukeBox/JukeBox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AF8A924E18D0EEA800583A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JukeBox/JukeBox-Prefix.pch";
+				INFOPLIST_FILE = "JukeBox/JukeBox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AF8A925018D0EEA800583A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JukeBox.app/JukeBox";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JukeBox/JukeBox-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JukeBoxTests/JukeBoxTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AF8A925118D0EEA800583A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JukeBox.app/JukeBox";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JukeBox/JukeBox-Prefix.pch";
+				INFOPLIST_FILE = "JukeBoxTests/JukeBoxTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF8A921B18D0EEA800583A42 /* Build configuration list for PBXProject "JukeBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF8A924A18D0EEA800583A42 /* Debug */,
+				AF8A924B18D0EEA800583A42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF8A924C18D0EEA800583A42 /* Build configuration list for PBXNativeTarget "JukeBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF8A924D18D0EEA800583A42 /* Debug */,
+				AF8A924E18D0EEA800583A42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF8A924F18D0EEA800583A42 /* Build configuration list for PBXNativeTarget "JukeBoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF8A925018D0EEA800583A42 /* Debug */,
+				AF8A925118D0EEA800583A42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF8A921818D0EEA800583A42 /* Project object */;
+}
