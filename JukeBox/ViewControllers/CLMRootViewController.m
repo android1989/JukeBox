@@ -10,6 +10,7 @@
 #import "CLMBrowserViewController.h"
 #import "CLMMultipeerListener.h"
 #import "CLMBeatsTrack.h"
+#import "CLMRtmp.h"
 
 @interface CLMRootViewController ()
 
