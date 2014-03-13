@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDA18D141C500B8918B /* CLMTrackModel.m */; };
+		49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */; };
 		5A65478979E1473CBC17AC6E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBC4157F4484B70BCB7460C /* libPods.a */; };
 		AF8A922418D0EEA800583A42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922318D0EEA800583A42 /* Foundation.framework */; };
 		AF8A922618D0EEA800583A42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922518D0EEA800583A42 /* CoreGraphics.framework */; };
@@ -43,6 +45,10 @@
 
 /* Begin PBXFileReference section */
 		0C6EA73567BC41439D45224F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		49AD0CDA18D141C500B8918B /* CLMTrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMTrackModel.m; sourceTree = "<group>"; };
+		49AD0CDB18D141C500B8918B /* CLMTrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMTrackModel.h; sourceTree = "<group>"; };
+		49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMBeatsTrack.m; sourceTree = "<group>"; };
+		49AD0CDE18D141D000B8918B /* CLMBeatsTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMBeatsTrack.h; sourceTree = "<group>"; };
 		ABBC4157F4484B70BCB7460C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8A922018D0EEA800583A42 /* JukeBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JukeBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8A922318D0EEA800583A42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -182,6 +188,8 @@
 		AF8A925218D0F09F00583A42 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				49AD0CDA18D141C500B8918B /* CLMTrackModel.m */,
+				49AD0CDB18D141C500B8918B /* CLMTrackModel.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +197,8 @@
 		AF8A925318D0F09F00583A42 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */,
+				49AD0CDE18D141D000B8918B /* CLMBeatsTrack.h */,
 				AF8A925B18D0F66B00583A42 /* MultipeerListener */,
 				AF8A926118D0FBC200583A42 /* CLMConstants.h */,
 				AF8A926218D0FBC200583A42 /* CLMConstants.m */,
@@ -369,8 +379,10 @@
 				AF8A926318D0FBC200583A42 /* CLMConstants.m in Sources */,
 				AF8A923018D0EEA800583A42 /* main.m in Sources */,
 				AF8A923418D0EEA800583A42 /* CLMAppDelegate.m in Sources */,
+				49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */,
 				AF8A925E18D0F69000583A42 /* CLMMultipeerListener.m in Sources */,
 				AF8A926718D0FC6400583A42 /* CLMBrowserViewController.m in Sources */,
+				49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */,
 				AF8A925918D0F10500583A42 /* CLMRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

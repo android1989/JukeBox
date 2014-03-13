@@ -9,6 +9,7 @@
 #import "CLMRootViewController.h"
 #import "CLMBrowserViewController.h"
 #import "CLMMultipeerListener.h"
+#import "CLMBeatsTrack.h"
 
 @interface CLMRootViewController ()
 
@@ -36,6 +37,8 @@
     [self addChildViewController:self.browserViewController];
     [self.browserViewController willMoveToParentViewController:self];
     [self.view addSubview:self.browserViewController.view];
+    [[CLMBeatsTrack sharedManager] beatsWith:@"voyager" completionBlock:^(NSArray *tracks) {
+    }];
 }
 
 - (void)didReceiveMemoryWarning
