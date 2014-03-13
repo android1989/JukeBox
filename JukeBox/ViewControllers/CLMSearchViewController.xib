@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CLMSearchViewController">
             <connections>
+                <outlet property="artistField" destination="3XE-zs-h3z" id="XCa-sZ-oxv"/>
+                <outlet property="collectionView" destination="9EZ-xX-IQQ" id="jej-kI-X0w"/>
+                <outlet property="trackField" destination="A5u-ff-eCD" id="YWr-FJ-sQB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,25 +18,41 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3XE-zs-h3z">
-                    <rect key="frame" x="20" y="57" width="280" height="30"/>
+                    <rect key="frame" x="20" y="27" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <action selector="artistChanged:" destination="-1" eventType="editingChanged" id="7Jo-7c-ukC"/>
-                        <outlet property="delegate" destination="i5M-Pr-FkT" id="BxO-Nk-DbR"/>
+                        <outlet property="delegate" destination="-1" id="ab2-FB-L7a"/>
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Track" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A5u-ff-eCD">
-                    <rect key="frame" x="20" y="125" width="280" height="30"/>
+                    <rect key="frame" x="20" y="65" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <action selector="trackChanged:" destination="-1" eventType="editingChanged" id="OZm-oq-hQB"/>
-                        <outlet property="delegate" destination="i5M-Pr-FkT" id="RDz-R1-Aii"/>
+                        <outlet property="delegate" destination="-1" id="H1b-lS-otm"/>
                     </connections>
                 </textField>
+                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9EZ-xX-IQQ">
+                    <rect key="frame" x="0.0" y="103" width="320" height="465"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="qOd-Xs-WLZ">
+                        <size key="itemSize" width="320" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="UWF-BI-xFM"/>
+                        <outlet property="delegate" destination="-1" id="p49-Fk-cH1"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

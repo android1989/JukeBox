@@ -12,7 +12,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import "CLMBeatsTrack.h"
 #import "CLMSearchViewController.h"
-@interface CLMRootViewController () <UIScrollViewDelegate, CLMLooperControllerDelegate>
+
+
+@interface CLMRootViewController () <UIScrollViewDelegate, CLMLooperControllerDelegate, CLMSearchViewControllerDelegate>
 
 @property (nonatomic, strong) CLMLoopViewController *loopViewController;
 @property (nonatomic, strong) CLMSearchViewController *searchViewController;
@@ -37,7 +39,7 @@
     // Do any additional setup after loading the view from its nib.
 
     self.searchViewController = [[CLMSearchViewController alloc] init];
-    
+    self.searchViewController.delegate = self;
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [self.scrollView setContentSize:CGSizeMake(self.view.bounds.size.width*2, self.view.bounds.size.height)];
     self.scrollView.delegate = self;
@@ -91,5 +93,11 @@
 
 - (void)didStopRecording {
     self.scrollView.scrollEnabled = YES;
+}
+
+- (void)didSelectTrack:(CLMTrackModel *)track {
+    [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width, 0) animated:YES];
+    [self.loopViewController setCLMTrackModel:track];
+    [self.searchViewController reset];
 }
 @end

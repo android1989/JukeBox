@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *fileName;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) IBOutlet UIImageView *recordingAnimation;
+@property (nonatomic, assign) BOOL shouldPlay;
 @end
 
 @implementation CLMTrackCell
@@ -38,13 +39,32 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self loadRecordingAnimation];
+    self.shouldPlay = YES;
 }
 
 - (void)loadRecordingAnimation
 {
     NSMutableArray *images = [[NSMutableArray alloc] init];
+    static int dots = 0;
+    NSString *name = @"dots";
+    
+    switch (dots) {
+        case 0:
+            name = @"dots";
+            break;
+        case 1:
+            name = @"circle";
+            break;
+        case 2:
+            name = @"line";
+            break;
+        default:
+            break;
+    }
+    
+    dots++;
     for (int i = 1; i <= 23; i++) {
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"small_000%02d", i]];
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_%02d",name, i]];
         [images addObject:image];
     }
     
@@ -70,6 +90,9 @@
 }
 
 - (void)play {
+    if (!self.shouldPlay) {
+        return;
+    }
     [self.audioPlayer play];
     [self.recordingAnimation startAnimating];
 }
@@ -77,5 +100,15 @@
 - (void)stop {
     [self.audioPlayer stop];
     [self.recordingAnimation stopAnimating];
+}
+
+- (void)togglePlay {
+    self.shouldPlay = !_shouldPlay;
+    
+    if (!self.shouldPlay) {
+        self.alpha = .5;
+    }else{
+        self.alpha = 1;
+    }
 }
 @end

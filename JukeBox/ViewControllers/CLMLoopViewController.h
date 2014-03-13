@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CLMTrackModel.h"
 
 @protocol CLMLooperControllerDelegate;
 
 @interface CLMLoopViewController : UIViewController
 
+- (void)setCLMTrackModel:(CLMTrackModel *)trackModel;
 @property (nonatomic, weak) id<CLMLooperControllerDelegate> delegate;
 @end
 

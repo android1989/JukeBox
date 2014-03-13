@@ -33,6 +33,7 @@ static CLMBeatsTrack *_sharedBeats = nil;
 
 - (void)beatsWith:(NSString *)searchString completionBlock:(beatsCompletionBlock)completionBlock {
     NSString *finalPath = [NSString stringWithFormat:@"https://partner.api.beatsmusic.com/v1/api/search?q=%@&type=track&client_id=538k54xdrc6xnq9rnf55uyts", searchString];
+    finalPath = [finalPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [self GET:finalPath parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSMutableArray *tracks = [[NSMutableArray alloc] init];
         NSDictionary *json = responseObject;
