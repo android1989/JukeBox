@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <AFHTTPSessionManager.h>
+#import "CLMTrackModel.h"
 
 typedef void (^beatsCompletionBlock)(NSArray *tracks);
+typedef void (^echoNestCompletionBlock1)(NSString *url);
+typedef void (^echoNestCompletionBlock2)(NSArray *bars);
 
 @interface CLMBeatsTrack : AFHTTPSessionManager
 
 + (instancetype)sharedManager;
 - (void)beatsWith:(NSString *)searchString completionBlock:(beatsCompletionBlock)completionBlock;
+- (void)echoNestGetURLFrom:(CLMTrackModel *)model completionBlock:(echoNestCompletionBlock1)completionBlock;
+- (void)echoNestGetBarsFrom:(NSString *)url completionBlock:(echoNestCompletionBlock2)completionBlock;
 
 @end
