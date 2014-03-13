@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DCFA11018D2055300A1DE7D /* CLMCutAVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCFA10F18D2055300A1DE7D /* CLMCutAVideo.m */; };
 		1DCFA11218D2065300A1DE7D /* 10 Voyager.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA11118D2065300A1DE7D /* 10 Voyager.mp3 */; };
+		1DCFA11418D209F500A1DE7D /* The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA11318D209F500A1DE7D /* The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3 */; };
 		49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDA18D141C500B8918B /* CLMTrackModel.m */; };
 		49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */; };
 		5A65478979E1473CBC17AC6E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBC4157F4484B70BCB7460C /* libPods.a */; };
@@ -1086,6 +1087,7 @@
 		1DCFA10E18D2055300A1DE7D /* CLMCutAVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMCutAVideo.h; sourceTree = "<group>"; };
 		1DCFA10F18D2055300A1DE7D /* CLMCutAVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMCutAVideo.m; sourceTree = "<group>"; };
 		1DCFA11118D2065300A1DE7D /* 10 Voyager.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10 Voyager.mp3"; sourceTree = "<group>"; };
+		1DCFA11318D209F500A1DE7D /* The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3"; sourceTree = "<group>"; };
 		49AD0CDA18D141C500B8918B /* CLMTrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMTrackModel.m; sourceTree = "<group>"; };
 		49AD0CDB18D141C500B8918B /* CLMTrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMTrackModel.h; sourceTree = "<group>"; };
 		49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMBeatsTrack.m; sourceTree = "<group>"; };
@@ -2244,6 +2246,7 @@
 		AF8A922A18D0EEA800583A42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1DCFA11318D209F500A1DE7D /* The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3 */,
 				AF0F647718D20603007C8765 /* logo@2x.png */,
 				AF8A9A8C18D1FC1400583A42 /* kenyanCoffeeRG.otf */,
 				AF8A9A5318D1FAF400583A42 /* lines */,
@@ -4205,6 +4208,7 @@
 				AF8A970B18D1F83000583A42 /* dots_197.png in Resources */,
 				AF8A97E518D1F83000583A42 /* dots_395.png in Resources */,
 				AF8A988418D1F83000583A42 /* dots_54.png in Resources */,
+				1DCFA11418D209F500A1DE7D /* The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3 in Resources */,
 				AF8A97DA18D1F83000583A42 /* dots_385.png in Resources */,
 				AF8A969918D1F83000583A42 /* dots_03.png in Resources */,
 				AF8A92B718D1802200583A42 /* Recording_00011.png in Resources */,
