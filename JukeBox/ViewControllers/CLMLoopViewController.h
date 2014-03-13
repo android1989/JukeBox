@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CLMLooperControllerDelegate;
+
 @interface CLMLoopViewController : UIViewController
+
+@property (nonatomic, weak) id<CLMLooperControllerDelegate> delegate;
+@end
+
+@protocol CLMLooperControllerDelegate <NSObject>
+
+- (void)didBeginRecording;
+- (void)didStopRecording;
 
 @end
