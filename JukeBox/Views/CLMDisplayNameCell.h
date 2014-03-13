@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MultipeerConnectivity/MultipeerConnectivity.h>
+#import "CLMTrackModel.h"
 
 @interface CLMDisplayNameCell : UICollectionViewCell
 
-- (void)configureWithPeer:(MCPeerID *)peerID;
+- (void)configureWithPeer:(CLMTrackModel *)peerID;
 @end

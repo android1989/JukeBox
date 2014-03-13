@@ -25,9 +25,10 @@
     return self;
 }
 
-- (void)configureWithPeer:(MCPeerID *)peerID
+- (void)configureWithPeer:(CLMTrackModel *)peerID
 {
-    self.displayName.text = peerID.displayName;
+    self.displayName.text = [NSString stringWithFormat:@"%@, %@", peerID.display, peerID.detail];
+    self.displayName.font = [UIFont fontWithName:@"KenyanCoffeeRg-Regular" size:26];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

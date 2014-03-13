@@ -13,4 +13,5 @@
 - (void)configureWithAudioFile:(NSString *)fileName;
 - (void)play;
 - (void)stop;
+- (void)togglePlay;
 @end

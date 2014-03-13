@@ -11,7 +11,7 @@
 #import "CLMRecorder.h"
 #import "CLMTrackCell.h"
 
-@interface CLMLoopViewController () <CLMRecorderDelegate>
+@interface CLMLoopViewController () <CLMRecorderDelegate, UICollectionViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) CLMLoopProject *loopProject;
@@ -20,6 +20,18 @@
 @property (nonatomic, strong) IBOutlet UIButton *playButton;
 @property (nonatomic, strong) IBOutlet UIButton *recordButton;
 @property (nonatomic, strong) IBOutlet UIImageView *recordingAnimation;
+@property (nonatomic, strong) IBOutlet UILabel *timeLabel;
+@property (nonatomic, strong) IBOutlet UILabel *bpmLabel;
+@property (nonatomic, strong) IBOutlet UILabel *recordingsLabel;
+@property (nonatomic, strong) IBOutlet UIProgressView *progressView;
+@property (nonatomic, strong) IBOutlet UILabel *artistLabel;
+
+@property (nonatomic, strong) CLMTrackModel *trackModel;
+@property (nonatomic, strong) NSTimer *progressTimer;
+
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+
+@property (nonatomic, strong) IBOutlet UIImageView *mootImageView;
 @end
 
 @implementation CLMLoopViewController
@@ -44,6 +56,44 @@
     self.recorder.delegate = self;
     
     [self loadRecordingAnimation];
+    
+    self.playButton.alpha = 0;
+    self.bpmLabel.alpha = 0;
+    self.timeLabel.alpha = 0;
+    self.artistLabel.alpha = 0;
+    self.progressView.alpha = 0;
+    self.recordingsLabel.alpha = 0;
+    self.mootImageView.alpha = 0;
+    
+    self.timeLabel.font = [UIFont fontWithName:@"KenyanCoffeeRg-Regular" size:36];
+    self.bpmLabel.font = [UIFont fontWithName:@"KenyanCoffeeRg-Regular" size:36];
+    self.artistLabel.font = [UIFont fontWithName:@"KenyanCoffeeRg-Regular" size:36];
+    self.recordingsLabel.font = [UIFont fontWithName:@"KenyanCoffeeRg-Regular" size:22];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self animateIn];
+    
+    [UIView animateWithDuration:.3 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.mootImageView.alpha = 1;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:.3 delay:2 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
+            self.mootImageView.alpha = 0;
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:.4 delay:2 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
+                if ([self.loopProject.recordings count] != 0) {
+                    self.playButton.alpha = 1;
+                }
+                self.collectionView.alpha = 1;
+                self.bpmLabel.alpha = 1;
+                self.timeLabel.alpha = 1;
+                self.recordingsLabel.alpha = 1;
+            } completion:^(BOOL finished) {
+                
+            }];
+        }];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,6 +134,11 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    CLMTrackCell *track = (CLMTrackCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    [track togglePlay];
+}
+
 #pragma mark - IBActions
 
 - (IBAction)playButtonTouchUpInside:(id)sender {
@@ -107,8 +162,10 @@
     if ([self.recorder isRecording]) {
         
     }else{
+        [self animateDetailsOut];
         [self.delegate didBeginRecording];
         [self.recorder startRecording];
+        [self playSong];
         [self.recordingAnimation startAnimating];
         self.recordButton.enabled = NO;
         [self.recordButton setTitle:@"Recording" forState:UIControlStateNormal];
@@ -118,16 +175,106 @@
 #pragma mark - CLMRecorderDelegate
 
 - (void)recorderdidStopRecording:(CLMRecorder *)recoder {
+    [self stopSong];
     [self.playButton setTitle:@"Record" forState:UIControlStateNormal];
     self.recordButton.enabled = YES;
     [self.recordingAnimation stopAnimating];
     [self.collectionView reloadData];
-    self.recordButton.transform = CGAffineTransformIdentity;
+    [UIView animateWithDuration:.3 delay:0 options:(UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut) animations:^{
+        self.recordButton.transform = CGAffineTransformIdentity;
+        self.recordingAnimation.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+
+    }];
+    
     [self.delegate didStopRecording];
+    [self animateDetailsIn];
 }
 
 - (void)recorder:(CLMRecorder *)recoder peakLevel:(CGFloat)level {
     self.recordingAnimation.transform = CGAffineTransformMakeScale(2+level, 2+level);
     self.recordButton.transform = CGAffineTransformMakeScale(1+level, 1+level);
+}
+
+- (void)animateIn {
+    CGPoint oldCenter = self.recordButton.center;
+    self.recordButton.center = CGPointMake(oldCenter.x, -100);
+    
+    [UIView animateWithDuration:.5 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.recordButton.center = CGPointMake(oldCenter.x, oldCenter.y+15);
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:.4 delay:0 options:(UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut) animations:^{
+            self.recordButton.center = oldCenter;
+        } completion:^(BOOL finished) {
+            //[self animateDetailsIn];
+        }];
+    }];
+    
+}
+
+- (void)animateDetailsOut {
+    [UIView animateWithDuration:.4 animations:^{
+        self.playButton.alpha = 0;
+        self.bpmLabel.alpha = 0;
+        self.timeLabel.alpha = 0;
+        self.collectionView.alpha = 0;
+        self.recordingsLabel.alpha = 0;
+    }];
+}
+
+- (void)animateDetailsIn {
+    [UIView animateWithDuration:.4 animations:^{
+        if ([self.loopProject.recordings count] != 0) {
+            self.playButton.alpha = 1;
+        }
+        self.collectionView.alpha = 1;
+        self.bpmLabel.alpha = 1;
+        self.timeLabel.alpha = 1;
+        self.recordingsLabel.alpha = 1;
+    }];
+}
+
+- (void)setCLMTrackModel:(CLMTrackModel *)trackModel {
+    _trackModel = trackModel;
+    self.artistLabel.text = [NSString stringWithFormat:@"%@, %@", trackModel.display, trackModel.detail];
+    self.progressView.progress = 0;
+    [UIView animateWithDuration:.4 animations:^{
+        self.artistLabel.alpha = 1;
+        self.progressView.alpha = 1;
+    }];
+}
+
+- (void)playSong {
+    self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(progressMade) userInfo:nil repeats:YES];
+    self.progressView.progress = 0;
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"tick" withExtension:@"mp3"];
+    
+    NSError *error;
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    self.audioPlayer.numberOfLoops = -1;
+}
+
+- (void)stopSong {
+    
+    [self.audioPlayer stop];
+    self.trackModel = nil;
+    [self.progressTimer invalidate];
+    self.progressTimer = nil;
+    self.progressView.progress = 0;
+    
+    [UIView animateWithDuration:.4 animations:^{
+        self.artistLabel.alpha = 0;
+        self.progressView.alpha = 0;
+    }];
+
+}
+
+- (void)progressMade {
+    self.progressView.progress += .01;
 }
 @end
