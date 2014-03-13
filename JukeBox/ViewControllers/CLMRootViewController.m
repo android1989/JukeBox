@@ -7,14 +7,17 @@
 //
 
 #import "CLMRootViewController.h"
-#import "CLMBrowserViewController.h"
+#import "CLMLoopViewController.h"
 #import "CLMMultipeerListener.h"
+#import <AVFoundation/AVFoundation.h>
 #import "CLMBeatsTrack.h"
 #import "CLMRtmp.h"
 
+
 @interface CLMRootViewController ()
 
-@property (nonatomic, strong) CLMBrowserViewController *browserViewController;
+@property (nonatomic, strong) CLMLoopViewController *loopViewController;
+
 @end
 
 @implementation CLMRootViewController
@@ -33,11 +36,20 @@
     [super viewDidLoad];
     [CLMMultipeerListener startUp];
     // Do any additional setup after loading the view from its nib.
-    self.browserViewController = [[CLMBrowserViewController alloc] init];
-    
-    [self addChildViewController:self.browserViewController];
-    [self.browserViewController willMoveToParentViewController:self];
-    [self.view addSubview:self.browserViewController.view];
+
+    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+        if (granted) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.loopViewController = [[CLMLoopViewController alloc] init];
+                
+                [self addChildViewController:self.loopViewController];
+                [self.loopViewController willMoveToParentViewController:self];
+                [self.view addSubview:self.loopViewController.view];
+            });
+        } else {
+            
+        }
+
     [[CLMBeatsTrack sharedManager] beatsWith:@"voyager" completionBlock:^(NSArray *tracks) {
         [[CLMBeatsTrack sharedManager] echoNestGetURLFrom:[tracks objectAtIndex:0] completionBlock:^(NSString *url) {
             [[CLMBeatsTrack sharedManager] echoNestGetBarsFrom:url completionBlock:^(NSArray *bars) {
