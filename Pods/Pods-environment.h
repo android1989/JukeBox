@@ -48,9 +48,3 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 2
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 0
 
-// librtmp-iOS
-#define COCOAPODS_POD_AVAILABLE_librtmp_iOS
-#define COCOAPODS_VERSION_MAJOR_librtmp_iOS 1
-#define COCOAPODS_VERSION_MINOR_librtmp_iOS 0
-#define COCOAPODS_VERSION_PATCH_librtmp_iOS 1
-

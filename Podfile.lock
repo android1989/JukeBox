@@ -18,14 +18,11 @@ PODS:
   - AFNetworking/UIKit (2.2.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - librtmp-iOS (1.0.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
-  - librtmp-iOS
 
 SPEC CHECKSUMS:
   AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56
-  librtmp-iOS: 494e64695a9392974dd4d342550884eeda1e78c8
 
 COCOAPODS: 0.29.0

@@ -10,4 +10,6 @@
 
 @interface CLMCutAVideo : NSObject
 
+-(void)attemptToCutAVideo;
+
 @end
