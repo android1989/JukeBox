@@ -11,7 +11,6 @@
 #import "CLMMultipeerListener.h"
 #import <AVFoundation/AVFoundation.h>
 #import "CLMBeatsTrack.h"
-#import "CLMRtmp.h"
 
 
 @interface CLMRootViewController ()
@@ -49,7 +48,7 @@
         } else {
             
         }
-
+    }];
     [[CLMBeatsTrack sharedManager] beatsWith:@"voyager" completionBlock:^(NSArray *tracks) {
         [[CLMBeatsTrack sharedManager] echoNestGetURLFrom:[tracks objectAtIndex:0] completionBlock:^(NSString *url) {
             [[CLMBeatsTrack sharedManager] echoNestGetBarsFrom:url completionBlock:^(NSArray *bars) {

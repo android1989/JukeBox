@@ -62,7 +62,8 @@ static CLMBeatsTrack *_sharedBeats = nil;
             NSDictionary *bar = [responseObject[@"bars"] objectAtIndex:k];
             [barArr addObject:bar];
         }
-        completionBlock(barArr);
+        completionBlock(barArr); //start of barArr[0]  == [barArr[0] valueForKey:@"start"]
+        // end of the 4 bars is equal to the start value + 8 seconds ( in variable time case it would be equal to [barArr[3] valueForKey:@"start"] + [barArr[3] valueForKey:@"duration"]
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"err");
     }];
