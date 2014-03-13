@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-librtmp-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,27 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0429D961086244D18D21E88C</key>
+		<key>47CD90979D084194A541B0ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1F52D5D1438B4615AF7F446E</key>
+		<key>9418DAB36F6D497E8CD9B710</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>23636224687C4DA8964D56D7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BC923B67DA0F4165819DB68B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F428506AD15E4B09BD6FACF9</key>
+		<key>C281EAA5647746DAB6AED27A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

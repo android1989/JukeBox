@@ -96,11 +96,11 @@
 - (void)levelTimerCallback:(NSTimer *)timer {
 	[audioRecorder updateMeters];
     
-    const double ALPHA = 0.1;
-	double peakPowerForChannel = pow(10, (0.1 * [audioRecorder peakPowerForChannel:0]));
+    const double ALPHA = 0.5;
+	double peakPowerForChannel = pow(10, (0.5 * [audioRecorder peakPowerForChannel:0]));
 	self.lowPassResults = ALPHA * peakPowerForChannel + (1.0 - ALPHA) * self.lowPassResults;
     
-    [self.delegate recorder:self peakLevel:peakPowerForChannel*10];
+    [self.delegate recorder:self peakLevel:self.lowPassResults];
 }
 
 - (void)beginRecording {

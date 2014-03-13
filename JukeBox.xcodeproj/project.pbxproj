@@ -106,6 +106,9 @@
 		AF8A930618D1882A00583A42 /* small_00021.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A92EF18D1882900583A42 /* small_00021.png */; };
 		AF8A930718D1882A00583A42 /* small_00022.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A92F018D1882900583A42 /* small_00022.png */; };
 		AF8A930818D1882A00583A42 /* small_00023.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A92F118D1882900583A42 /* small_00023.png */; };
+		AF8A930B18D1DEB000583A42 /* CLMRtmp.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A930A18D1DEB000583A42 /* CLMRtmp.m */; };
+		AF8A930F18D1E57800583A42 /* CLMSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A930D18D1E57800583A42 /* CLMSearchViewController.m */; };
+		AF8A931018D1E57800583A42 /* CLMSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8A930E18D1E57800583A42 /* CLMSearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +237,11 @@
 		AF8A92EF18D1882900583A42 /* small_00021.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_00021.png; sourceTree = "<group>"; };
 		AF8A92F018D1882900583A42 /* small_00022.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_00022.png; sourceTree = "<group>"; };
 		AF8A92F118D1882900583A42 /* small_00023.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_00023.png; sourceTree = "<group>"; };
+		AF8A930918D1DEB000583A42 /* CLMRtmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMRtmp.h; sourceTree = "<group>"; };
+		AF8A930A18D1DEB000583A42 /* CLMRtmp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMRtmp.m; sourceTree = "<group>"; };
+		AF8A930C18D1E57800583A42 /* CLMSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMSearchViewController.h; sourceTree = "<group>"; };
+		AF8A930D18D1E57800583A42 /* CLMSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMSearchViewController.m; sourceTree = "<group>"; };
+		AF8A930E18D1E57800583A42 /* CLMSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMSearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +368,8 @@
 		AF8A925318D0F09F00583A42 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				AF8A930918D1DEB000583A42 /* CLMRtmp.h */,
+				AF8A930A18D1DEB000583A42 /* CLMRtmp.m */,
 				49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */,
 				49AD0CDE18D141D000B8918B /* CLMBeatsTrack.h */,
 				AF8A925B18D0F66B00583A42 /* MultipeerListener */,
@@ -372,6 +382,9 @@
 		AF8A925418D0F09F00583A42 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF8A930C18D1E57800583A42 /* CLMSearchViewController.h */,
+				AF8A930D18D1E57800583A42 /* CLMSearchViewController.m */,
+				AF8A930E18D1E57800583A42 /* CLMSearchViewController.xib */,
 				AF8A925618D0F10500583A42 /* CLMRootViewController.h */,
 				AF8A925718D0F10500583A42 /* CLMRootViewController.m */,
 				AF8A925818D0F10500583A42 /* CLMRootViewController.xib */,
@@ -610,6 +623,7 @@
 				AF8A92C318D1802200583A42 /* Recording_00023.png in Resources */,
 				AF8A92F918D1882A00583A42 /* small_00008.png in Resources */,
 				AF8A92CC18D1802200583A42 /* Recording_00032.png in Resources */,
+				AF8A931018D1E57800583A42 /* CLMSearchViewController.xib in Resources */,
 				AF8A92FF18D1882A00583A42 /* small_00014.png in Resources */,
 				AF8A930618D1882A00583A42 /* small_00021.png in Resources */,
 				AF8A930718D1882A00583A42 /* small_00022.png in Resources */,
@@ -697,9 +711,11 @@
 				49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */,
 				AF8A925E18D0F69000583A42 /* CLMMultipeerListener.m in Sources */,
 				AF8A926718D0FC6400583A42 /* CLMBrowserViewController.m in Sources */,
+				AF8A930F18D1E57800583A42 /* CLMSearchViewController.m in Sources */,
 				49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */,
 				AF8A925918D0F10500583A42 /* CLMRootViewController.m in Sources */,
 				AF8A927118D127BA00583A42 /* CLMLoopViewController.m in Sources */,
+				AF8A930B18D1DEB000583A42 /* CLMRtmp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

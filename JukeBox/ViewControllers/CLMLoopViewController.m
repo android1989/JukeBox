@@ -107,6 +107,7 @@
     if ([self.recorder isRecording]) {
         
     }else{
+        [self.delegate didBeginRecording];
         [self.recorder startRecording];
         [self.recordingAnimation startAnimating];
         self.recordButton.enabled = NO;
@@ -122,6 +123,7 @@
     [self.recordingAnimation stopAnimating];
     [self.collectionView reloadData];
     self.recordButton.transform = CGAffineTransformIdentity;
+    [self.delegate didStopRecording];
 }
 
 - (void)recorder:(CLMRecorder *)recoder peakLevel:(CGFloat)level {
