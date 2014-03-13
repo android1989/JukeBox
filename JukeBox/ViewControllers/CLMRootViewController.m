@@ -13,7 +13,6 @@
 #import "CLMBeatsTrack.h"
 #import "CLMSearchViewController.h"
 
-
 @interface CLMRootViewController () <UIScrollViewDelegate, CLMLooperControllerDelegate, CLMSearchViewControllerDelegate>
 
 @property (nonatomic, strong) CLMLoopViewController *loopViewController;
@@ -63,13 +62,6 @@
         } else {
             
         }
-    }];
-    [[CLMBeatsTrack sharedManager] beatsWith:@"voyager" completionBlock:^(NSArray *tracks) {
-        [[CLMBeatsTrack sharedManager] echoNestGetURLFrom:[tracks objectAtIndex:0] completionBlock:^(NSString *url) {
-            [[CLMBeatsTrack sharedManager] echoNestGetBarsFrom:url completionBlock:^(NSArray *bars) {
-                
-            }];
-        }];
     }];
 }
 

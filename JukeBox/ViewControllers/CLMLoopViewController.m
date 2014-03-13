@@ -10,6 +10,7 @@
 #import "CLMLoopProject.h"
 #import "CLMRecorder.h"
 #import "CLMTrackCell.h"
+#import "CLMCutTrack.h"
 
 @interface CLMLoopViewController () <CLMRecorderDelegate, UICollectionViewDelegate>
 
@@ -260,18 +261,29 @@
 }
 
 - (void)stopSong {
-    
     [self.audioPlayer stop];
-    self.trackModel = nil;
     [self.progressTimer invalidate];
     self.progressTimer = nil;
+    
+    if (self.trackModel) {
+        [CLMCutTrack cutTrack:@"10 Voyager" toFile:[self.loopProject nextRecordingFileName] startingAt:0.12 forDuration:8.0 withCompletion:^{
+            self.trackModel = nil;
+            self.progressView.progress = 0;
+            
+            [UIView animateWithDuration:.4 animations:^{
+                self.artistLabel.alpha = 0;
+                self.progressView.alpha = 0;
+            }];
+       }];
+    }
+    
+    self.trackModel = nil;
     self.progressView.progress = 0;
     
     [UIView animateWithDuration:.4 animations:^{
         self.artistLabel.alpha = 0;
         self.progressView.alpha = 0;
     }];
-
 }
 
 - (void)progressMade {

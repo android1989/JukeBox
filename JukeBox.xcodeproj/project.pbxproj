@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DCFA11018D2055300A1DE7D /* CLMCutAVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCFA10F18D2055300A1DE7D /* CLMCutAVideo.m */; };
+		1DCFA11018D2055300A1DE7D /* CLMCutTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCFA10F18D2055300A1DE7D /* CLMCutTrack.m */; };
 		1DCFA11218D2065300A1DE7D /* 10 Voyager.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA11118D2065300A1DE7D /* 10 Voyager.mp3 */; };
 		49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDA18D141C500B8918B /* CLMTrackModel.m */; };
 		49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */; };
@@ -1083,8 +1083,8 @@
 
 /* Begin PBXFileReference section */
 		0C6EA73567BC41439D45224F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		1DCFA10E18D2055300A1DE7D /* CLMCutAVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMCutAVideo.h; sourceTree = "<group>"; };
-		1DCFA10F18D2055300A1DE7D /* CLMCutAVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMCutAVideo.m; sourceTree = "<group>"; };
+		1DCFA10E18D2055300A1DE7D /* CLMCutTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMCutTrack.h; sourceTree = "<group>"; };
+		1DCFA10F18D2055300A1DE7D /* CLMCutTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMCutTrack.m; sourceTree = "<group>"; };
 		1DCFA11118D2065300A1DE7D /* 10 Voyager.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10 Voyager.mp3"; sourceTree = "<group>"; };
 		49AD0CDA18D141C500B8918B /* CLMTrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMTrackModel.m; sourceTree = "<group>"; };
 		49AD0CDB18D141C500B8918B /* CLMTrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMTrackModel.h; sourceTree = "<group>"; };
@@ -2295,8 +2295,8 @@
 		AF8A925318D0F09F00583A42 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1DCFA10E18D2055300A1DE7D /* CLMCutAVideo.h */,
-				1DCFA10F18D2055300A1DE7D /* CLMCutAVideo.m */,
+				1DCFA10E18D2055300A1DE7D /* CLMCutTrack.h */,
+				1DCFA10F18D2055300A1DE7D /* CLMCutTrack.m */,
 				AF8A930918D1DEB000583A42 /* CLMRtmp.h */,
 				AF8A930A18D1DEB000583A42 /* CLMRtmp.m */,
 				49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */,
@@ -4575,7 +4575,7 @@
 				AF8A927718D130CD00583A42 /* CLMRecorder.m in Sources */,
 				49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */,
 				AF8A925E18D0F69000583A42 /* CLMMultipeerListener.m in Sources */,
-				1DCFA11018D2055300A1DE7D /* CLMCutAVideo.m in Sources */,
+				1DCFA11018D2055300A1DE7D /* CLMCutTrack.m in Sources */,
 				AF8A926718D0FC6400583A42 /* CLMBrowserViewController.m in Sources */,
 				AF8A930F18D1E57800583A42 /* CLMSearchViewController.m in Sources */,
 				49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */,
