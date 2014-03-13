@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		1DCFA11018D2055300A1DE7D /* CLMCutAVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCFA10F18D2055300A1DE7D /* CLMCutAVideo.m */; };
 		1DCFA11218D2065300A1DE7D /* 10 Voyager.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA11118D2065300A1DE7D /* 10 Voyager.mp3 */; };
-		1DCFA11418D209F500A1DE7D /* The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA11318D209F500A1DE7D /* The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3 */; };
 		49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDA18D141C500B8918B /* CLMTrackModel.m */; };
 		49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */; };
 		5A65478979E1473CBC17AC6E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBC4157F4484B70BCB7460C /* libPods.a */; };
 		AF0F647818D20603007C8765 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0F647718D20603007C8765 /* logo@2x.png */; };
+		AF0F647A18D21F26007C8765 /* Full.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF0F647918D21F26007C8765 /* Full.mp3 */; };
+		AF0F647C18D21F37007C8765 /* mini.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF0F647B18D21F37007C8765 /* mini.mp3 */; };
+		AF0F647E18D22D2A007C8765 /* tick.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AF0F647D18D22D2A007C8765 /* tick.m4a */; };
 		AF8A922418D0EEA800583A42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922318D0EEA800583A42 /* Foundation.framework */; };
 		AF8A922618D0EEA800583A42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922518D0EEA800583A42 /* CoreGraphics.framework */; };
 		AF8A922818D0EEA800583A42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922718D0EEA800583A42 /* UIKit.framework */; };
@@ -1087,13 +1089,15 @@
 		1DCFA10E18D2055300A1DE7D /* CLMCutAVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMCutAVideo.h; sourceTree = "<group>"; };
 		1DCFA10F18D2055300A1DE7D /* CLMCutAVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMCutAVideo.m; sourceTree = "<group>"; };
 		1DCFA11118D2065300A1DE7D /* 10 Voyager.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10 Voyager.mp3"; sourceTree = "<group>"; };
-		1DCFA11318D209F500A1DE7D /* The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3"; sourceTree = "<group>"; };
 		49AD0CDA18D141C500B8918B /* CLMTrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMTrackModel.m; sourceTree = "<group>"; };
 		49AD0CDB18D141C500B8918B /* CLMTrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMTrackModel.h; sourceTree = "<group>"; };
 		49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMBeatsTrack.m; sourceTree = "<group>"; };
 		49AD0CDE18D141D000B8918B /* CLMBeatsTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMBeatsTrack.h; sourceTree = "<group>"; };
 		ABBC4157F4484B70BCB7460C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0F647718D20603007C8765 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		AF0F647918D21F26007C8765 /* Full.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Full.mp3; sourceTree = "<group>"; };
+		AF0F647B18D21F37007C8765 /* mini.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mini.mp3; sourceTree = "<group>"; };
+		AF0F647D18D22D2A007C8765 /* tick.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tick.m4a; sourceTree = "<group>"; };
 		AF8A922018D0EEA800583A42 /* JukeBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JukeBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8A922318D0EEA800583A42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF8A922518D0EEA800583A42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -2246,7 +2250,9 @@
 		AF8A922A18D0EEA800583A42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1DCFA11318D209F500A1DE7D /* The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3 */,
+				AF0F647D18D22D2A007C8765 /* tick.m4a */,
+				AF0F647B18D21F37007C8765 /* mini.mp3 */,
+				AF0F647918D21F26007C8765 /* Full.mp3 */,
 				AF0F647718D20603007C8765 /* logo@2x.png */,
 				AF8A9A8C18D1FC1400583A42 /* kenyanCoffeeRG.otf */,
 				AF8A9A5318D1FAF400583A42 /* lines */,
@@ -4024,6 +4030,7 @@
 				AF8A977618D1F83000583A42 /* dots_294.png in Resources */,
 				AF8A99C318D1F83100583A42 /* dots_83.png in Resources */,
 				AF8A981218D1F83000583A42 /* dots_436.png in Resources */,
+				AF0F647A18D21F26007C8765 /* Full.mp3 in Resources */,
 				AF8A987718D1F83000583A42 /* dots_528.png in Resources */,
 				AF8A989318D1F83000583A42 /* dots_553.png in Resources */,
 				AF8A99C518D1F83100583A42 /* dots_831.png in Resources */,
@@ -4179,6 +4186,7 @@
 				AF8A98BD18D1F83000583A42 /* dots_591.png in Resources */,
 				AF8A99B218D1F83100583A42 /* dots_814.png in Resources */,
 				AF8A997918D1F83100583A42 /* dots_762.png in Resources */,
+				AF0F647C18D21F37007C8765 /* mini.mp3 in Resources */,
 				AF8A990418D1F83000583A42 /* dots_656.png in Resources */,
 				AF8A973818D1F83000583A42 /* dots_238.png in Resources */,
 				AF8A992A18D1F83000583A42 /* dots_690.png in Resources */,
@@ -4208,7 +4216,6 @@
 				AF8A970B18D1F83000583A42 /* dots_197.png in Resources */,
 				AF8A97E518D1F83000583A42 /* dots_395.png in Resources */,
 				AF8A988418D1F83000583A42 /* dots_54.png in Resources */,
-				1DCFA11418D209F500A1DE7D /* The Strokes - First Impressions of Earth - 01 - You Only Live Once.mp3 in Resources */,
 				AF8A97DA18D1F83000583A42 /* dots_385.png in Resources */,
 				AF8A969918D1F83000583A42 /* dots_03.png in Resources */,
 				AF8A92B718D1802200583A42 /* Recording_00011.png in Resources */,
@@ -4245,6 +4252,7 @@
 				AF8A993A18D1F83100583A42 /* dots_705.png in Resources */,
 				AF8A9A0E18D1F83100583A42 /* dots_898.png in Resources */,
 				AF8A92FC18D1882A00583A42 /* small_00011.png in Resources */,
+				AF0F647E18D22D2A007C8765 /* tick.m4a in Resources */,
 				AF8A972318D1F83000583A42 /* dots_219.png in Resources */,
 				AF8A92D018D1802200583A42 /* Recording_00036.png in Resources */,
 				AF8A973118D1F83000583A42 /* dots_231.png in Resources */,

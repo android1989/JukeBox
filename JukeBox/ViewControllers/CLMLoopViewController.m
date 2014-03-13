@@ -146,7 +146,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     CLMTrackCell *track = (CLMTrackCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    [track togglePlay];
+    [track togglePlayShouldTakeActionNow:NO];
 }
 
 #pragma mark - IBActions
@@ -200,17 +200,7 @@
     self.recordButton.enabled = YES;
     [self.recordingAnimation stopAnimating];
     [self.collectionView reloadData];
-    
-    NSInteger count = [self.collectionView.visibleCells count];
-    [self.collectionView.visibleCells enumerateObjectsUsingBlock:^(CLMTrackCell *cell, NSUInteger idx, BOOL *stop) {
-            cell.transform = CGAffineTransformMakeScale(0, 0);
-//            [UIView animateWithDuration:1 delay:idx options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//                cell.transform = CGAffineTransformIdentity;
-//            } completion:^(BOOL finished) {
-//                
-//            }];
-    }];
-    
+       
     [UIView animateWithDuration:.3 delay:0 options:(UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut) animations:^{
         self.recordButton.transform = CGAffineTransformIdentity;
         self.recordingAnimation.transform = CGAffineTransformIdentity;
@@ -271,7 +261,7 @@
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
     
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"10 Voyager" withExtension:@"mp3"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Full" withExtension:@"mp3"];
     
     NSError *error;
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];

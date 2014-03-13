@@ -102,9 +102,6 @@
 }
 
 - (void)play {
-    if (!self.shouldPlay) {
-        return;
-    }
     [self.audioPlayer play];
     [self.recordingAnimation startAnimating];
 }
@@ -114,13 +111,16 @@
     [self.recordingAnimation stopAnimating];
 }
 
-- (void)togglePlay {
+- (void)togglePlayShouldTakeActionNow:(BOOL)actionNow {
     self.shouldPlay = !_shouldPlay;
     
     if (!self.shouldPlay) {
         self.alpha = .5;
+        self.audioPlayer.volume = 0;
+        
     }else{
         self.alpha = 1;
+        self.audioPlayer.volume = 1;
     }
 }
 @end
