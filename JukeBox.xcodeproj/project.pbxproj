@@ -106,6 +106,7 @@
 		AF8A930618D1882A00583A42 /* small_00021.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A92EF18D1882900583A42 /* small_00021.png */; };
 		AF8A930718D1882A00583A42 /* small_00022.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A92F018D1882900583A42 /* small_00022.png */; };
 		AF8A930818D1882A00583A42 /* small_00023.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A92F118D1882900583A42 /* small_00023.png */; };
+		AF8A930B18D1DEB000583A42 /* CLMRtmp.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A930A18D1DEB000583A42 /* CLMRtmp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,8 @@
 		AF8A92EF18D1882900583A42 /* small_00021.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_00021.png; sourceTree = "<group>"; };
 		AF8A92F018D1882900583A42 /* small_00022.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_00022.png; sourceTree = "<group>"; };
 		AF8A92F118D1882900583A42 /* small_00023.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_00023.png; sourceTree = "<group>"; };
+		AF8A930918D1DEB000583A42 /* CLMRtmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMRtmp.h; sourceTree = "<group>"; };
+		AF8A930A18D1DEB000583A42 /* CLMRtmp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMRtmp.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +363,8 @@
 		AF8A925318D0F09F00583A42 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				AF8A930918D1DEB000583A42 /* CLMRtmp.h */,
+				AF8A930A18D1DEB000583A42 /* CLMRtmp.m */,
 				49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */,
 				49AD0CDE18D141D000B8918B /* CLMBeatsTrack.h */,
 				AF8A925B18D0F66B00583A42 /* MultipeerListener */,
@@ -700,6 +705,7 @@
 				49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */,
 				AF8A925918D0F10500583A42 /* CLMRootViewController.m in Sources */,
 				AF8A927118D127BA00583A42 /* CLMLoopViewController.m in Sources */,
+				AF8A930B18D1DEB000583A42 /* CLMRtmp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

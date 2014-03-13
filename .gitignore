@@ -1,0 +1,14 @@
+
+*.a
+
+Pods/Headers/librtmp-iOS/amf.h
+
+Pods/Headers/librtmp-iOS/aes.h
+
+Pods/Headers/librtmp-iOS/asn1.h
+
+Pods/Headers/librtmp-iOS/asn1_mac.h
+
+Pods/Headers/librtmp-iOS/bio.h
+
+Pods/Headers/librtmp-iOS/asn1t.h
