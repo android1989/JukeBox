@@ -19,7 +19,7 @@
 }
 
 - (void)addSongClip {
-    [_recordings addObject:@"10 Voyager.mp3"];
+    [_recordings addObject:@"mini.mp3"];
 }
 
 - (NSString *)nextRecordingFileName {

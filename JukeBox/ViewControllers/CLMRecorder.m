@@ -9,7 +9,7 @@
 #import "CLMRecorder.h"
 #import "CLMLoopProject.h"
 
-@interface CLMRecorder () <AVAudioRecorderDelegate>
+@interface CLMRecorder () <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
 
 @property (nonatomic, strong) CLMLoopProject *project;
 @property (nonatomic, strong) NSTimer *timer;
@@ -38,7 +38,7 @@
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"tick" withExtension:@"mp3"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"tick" withExtension:@"m4a"];
     
     NSError *error;
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
@@ -65,32 +65,34 @@
     audioRecorder.meteringEnabled = YES;
     [audioRecorder prepareToRecord];
     audioRecorder.delegate = self;
+    audioPlayer.delegate = self;
+    [audioPlayer play];
     
     self.count = 0;
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:duration
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:duration-.01
                                      target:self
                                    selector:@selector(targetMethod:)
                                    userInfo:nil
                                     repeats:YES];
     
-    
+    self.micSamplingTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(levelTimerCallback:) userInfo:nil repeats:YES];
 }
 
 - (void)targetMethod:(NSTimer *)timer {
 
+    
+    
     self.count ++;
     if (self.count == 4) {
         [self beginRecording];
-        self.micSamplingTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(levelTimerCallback:) userInfo:nil repeats:YES];
+        
     }
-    
-    [audioPlayer play];
-    
-    if (self.numberOfBeatsToRecord+4 == self.count) {
-        [self stopRecording];
-    }
-    
-    
+//
+//    [audioPlayer play];
+//    
+//    if (self.numberOfBeatsToRecord+4 == self.count) {
+//        [self stopRecording];
+//    }
 }
 
 - (void)levelTimerCallback:(NSTimer *)timer {
@@ -150,5 +152,9 @@
 
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag {
     [self.delegate recorderdidStopRecording:self];
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    [self stopRecording];
 }
 @end
