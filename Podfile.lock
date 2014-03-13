@@ -18,11 +18,14 @@ PODS:
   - AFNetworking/UIKit (2.2.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - NXOAuth2Client (1.2.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - NXOAuth2Client (~> 1.2.2)
 
 SPEC CHECKSUMS:
   AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56
+  NXOAuth2Client: 2ad31d48b28e00663ce4fe21345ccee0cab35e01
 
 COCOAPODS: 0.29.0

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1DCFA11018D2055300A1DE7D /* CLMCutTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCFA10F18D2055300A1DE7D /* CLMCutTrack.m */; };
 		1DCFA11218D2065300A1DE7D /* 10 Voyager.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA11118D2065300A1DE7D /* 10 Voyager.mp3 */; };
+		491E355518D2705D00050D24 /* CLMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491E355418D2705D00050D24 /* CLMLoginViewController.m */; };
+		491E355718D270E800050D24 /* CLMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491E355618D270E800050D24 /* CLMLoginViewController.xib */; };
 		49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDA18D141C500B8918B /* CLMTrackModel.m */; };
 		49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */; };
 		5A65478979E1473CBC17AC6E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBC4157F4484B70BCB7460C /* libPods.a */; };
@@ -1089,6 +1091,9 @@
 		1DCFA10E18D2055300A1DE7D /* CLMCutTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMCutTrack.h; sourceTree = "<group>"; };
 		1DCFA10F18D2055300A1DE7D /* CLMCutTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMCutTrack.m; sourceTree = "<group>"; };
 		1DCFA11118D2065300A1DE7D /* 10 Voyager.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10 Voyager.mp3"; sourceTree = "<group>"; };
+		491E355318D2705D00050D24 /* CLMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMLoginViewController.h; sourceTree = "<group>"; };
+		491E355418D2705D00050D24 /* CLMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMLoginViewController.m; sourceTree = "<group>"; };
+		491E355618D270E800050D24 /* CLMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMLoginViewController.xib; sourceTree = "<group>"; };
 		49AD0CDA18D141C500B8918B /* CLMTrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMTrackModel.m; sourceTree = "<group>"; };
 		49AD0CDB18D141C500B8918B /* CLMTrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMTrackModel.h; sourceTree = "<group>"; };
 		49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMBeatsTrack.m; sourceTree = "<group>"; };
@@ -2334,6 +2339,9 @@
 				AF8A927018D127BA00583A42 /* CLMLoopViewController.xib */,
 				AF8A927518D130CD00583A42 /* CLMRecorder.h */,
 				AF8A927618D130CD00583A42 /* CLMRecorder.m */,
+				491E355318D2705D00050D24 /* CLMLoginViewController.h */,
+				491E355418D2705D00050D24 /* CLMLoginViewController.m */,
+				491E355618D270E800050D24 /* CLMLoginViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -4508,6 +4516,7 @@
 				AF8A98F318D1F83000583A42 /* dots_640.png in Resources */,
 				AF8A97A118D1F83000583A42 /* dots_333.png in Resources */,
 				AF8A98B418D1F83000583A42 /* dots_583.png in Resources */,
+				491E355718D270E800050D24 /* CLMLoginViewController.xib in Resources */,
 				AF8A977018D1F83000583A42 /* dots_289.png in Resources */,
 				AF8A96EB18D1F83000583A42 /* dots_168.png in Resources */,
 				AF8A9A8318D1FAF500583A42 /* line_19.png in Resources */,
@@ -4586,6 +4595,7 @@
 				AF8A923418D0EEA800583A42 /* CLMAppDelegate.m in Sources */,
 				AF8A927718D130CD00583A42 /* CLMRecorder.m in Sources */,
 				49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */,
+				491E355518D2705D00050D24 /* CLMLoginViewController.m in Sources */,
 				AF8A925E18D0F69000583A42 /* CLMMultipeerListener.m in Sources */,
 				1DCFA11018D2055300A1DE7D /* CLMCutTrack.m in Sources */,
 				AF8A926718D0FC6400583A42 /* CLMBrowserViewController.m in Sources */,

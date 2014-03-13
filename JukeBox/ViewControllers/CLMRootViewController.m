@@ -12,11 +12,13 @@
 #import <AVFoundation/AVFoundation.h>
 #import "CLMBeatsTrack.h"
 #import "CLMSearchViewController.h"
+#import "CLMLoginViewController.h"
 
-@interface CLMRootViewController () <UIScrollViewDelegate, CLMLooperControllerDelegate, CLMSearchViewControllerDelegate>
+@interface CLMRootViewController () <UIScrollViewDelegate, CLMLooperControllerDelegate, CLMSearchViewControllerDelegate, CLMLoginViewControllerDelegate>
 
 @property (nonatomic, strong) CLMLoopViewController *loopViewController;
 @property (nonatomic, strong) CLMSearchViewController *searchViewController;
+@property (nonatomic, strong) CLMLoginViewController *loginViewController;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UIView *blackView;
 @end
@@ -35,9 +37,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [CLMMultipeerListener startUp];
     // Do any additional setup after loading the view from its nib.
 
+    //if not logged in
+    self.loginViewController = [[CLMLoginViewController alloc] init];
+    self.loginViewController.delegate = self;
+    [self.view addSubview:self.loginViewController.view];
+
+    /*
     self.searchViewController = [[CLMSearchViewController alloc] init];
     self.searchViewController.delegate = self;
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
@@ -66,6 +75,7 @@
             
         }
     }];
+    */
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
