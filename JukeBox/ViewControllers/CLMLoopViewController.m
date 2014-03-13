@@ -73,11 +73,21 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self animateIn];
     
-    [UIView animateWithDuration:.3 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    CGPoint oldCenter = self.recordButton.center;
+    self.recordButton.center = CGPointMake(oldCenter.x, -100);
+   
+    
+    [UIView animateWithDuration:.4 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.mootImageView.alpha = 1;
+        self.recordButton.center = CGPointMake(oldCenter.x, oldCenter.y+5);
     } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:.2 delay:0 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
+            self.recordButton.center = oldCenter;
+        } completion:^(BOOL finished) {
+        }];
+        
         [UIView animateWithDuration:.3 delay:2 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
             self.mootImageView.alpha = 0;
         } completion:^(BOOL finished) {
@@ -197,19 +207,6 @@
 }
 
 - (void)animateIn {
-    CGPoint oldCenter = self.recordButton.center;
-    self.recordButton.center = CGPointMake(oldCenter.x, -100);
-    
-    [UIView animateWithDuration:.5 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.recordButton.center = CGPointMake(oldCenter.x, oldCenter.y+15);
-    } completion:^(BOOL finished) {
-        
-        [UIView animateWithDuration:.4 delay:0 options:(UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut) animations:^{
-            self.recordButton.center = oldCenter;
-        } completion:^(BOOL finished) {
-            //[self animateDetailsIn];
-        }];
-    }];
     
 }
 
