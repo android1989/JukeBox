@@ -74,19 +74,33 @@
 }
 
 - (void)configureWithAudioFile:(NSString *)fileName {
-    self.fileName = fileName;
+    
+     NSURL *outputFileURL = nil;
+    if (NSNotFound == [fileName rangeOfString:@"mp3"].location) {
+        self.fileName = [NSString stringWithFormat:@"%@.mp3", fileName];
+        
+        NSArray *pathComponents = [NSArray arrayWithObjects:
+                                   [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                                   self.fileName,
+                                   nil];
+        outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+
+    }else{
+        self.fileName = fileName;
+        NSArray *components = [fileName componentsSeparatedByString:@"."];
+        outputFileURL = [[NSBundle mainBundle] URLForResource:[components firstObject] withExtension:@"mp3"];
+    }
+    
+    
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
     
-    NSArray *pathComponents = [NSArray arrayWithObjects:
-                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               [NSString stringWithFormat:@"%@.caf", fileName],
-                               nil];
-    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+    
     
     NSError *error;
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:outputFileURL error:&error];
     self.audioPlayer.numberOfLoops = -1;
+    [self.audioPlayer prepareToPlay];
 }
 
 - (void)play {

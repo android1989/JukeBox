@@ -74,11 +74,21 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self animateIn];
     
-    [UIView animateWithDuration:.3 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    CGPoint oldCenter = self.recordButton.center;
+    self.recordButton.center = CGPointMake(oldCenter.x, -100);
+   
+    
+    [UIView animateWithDuration:.4 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.mootImageView.alpha = 1;
+        self.recordButton.center = CGPointMake(oldCenter.x, oldCenter.y+5);
     } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:.2 delay:0 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
+            self.recordButton.center = oldCenter;
+        } completion:^(BOOL finished) {
+        }];
+        
         [UIView animateWithDuration:.3 delay:2 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
             self.mootImageView.alpha = 0;
         } completion:^(BOOL finished) {
@@ -156,19 +166,30 @@
         [self.playButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
         self.isPlaying = YES;
     }
-    
 }
 
 - (IBAction)playPauseTouchUpInside:(id)sender {
     if ([self.recorder isRecording]) {
         
     }else{
+        if (self.isPlaying && self.trackModel) {
+            [self stopSong];
+            [self recorderdidStopRecording:nil];
+            return;
+        }
+        
         [self animateDetailsOut];
         [self.delegate didBeginRecording];
-        [self.recorder startRecording];
-        [self playSong];
+        
+        
+        if (self.trackModel) {
+            [self playSong];
+        }else{
+            [self.recorder startRecording];
+        }
+        
         [self.recordingAnimation startAnimating];
-        self.recordButton.enabled = NO;
+
         [self.recordButton setTitle:@"Recording" forState:UIControlStateNormal];
     }
 }
@@ -176,11 +197,21 @@
 #pragma mark - CLMRecorderDelegate
 
 - (void)recorderdidStopRecording:(CLMRecorder *)recoder {
-    [self stopSong];
     [self.playButton setTitle:@"Record" forState:UIControlStateNormal];
     self.recordButton.enabled = YES;
     [self.recordingAnimation stopAnimating];
     [self.collectionView reloadData];
+    
+    NSInteger count = [self.collectionView.visibleCells count];
+    [self.collectionView.visibleCells enumerateObjectsUsingBlock:^(CLMTrackCell *cell, NSUInteger idx, BOOL *stop) {
+            cell.transform = CGAffineTransformMakeScale(0, 0);
+//            [UIView animateWithDuration:1 delay:idx options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//                cell.transform = CGAffineTransformIdentity;
+//            } completion:^(BOOL finished) {
+//                
+//            }];
+    }];
+    
     [UIView animateWithDuration:.3 delay:0 options:(UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut) animations:^{
         self.recordButton.transform = CGAffineTransformIdentity;
         self.recordingAnimation.transform = CGAffineTransformIdentity;
@@ -198,19 +229,6 @@
 }
 
 - (void)animateIn {
-    CGPoint oldCenter = self.recordButton.center;
-    self.recordButton.center = CGPointMake(oldCenter.x, -100);
-    
-    [UIView animateWithDuration:.5 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.recordButton.center = CGPointMake(oldCenter.x, oldCenter.y+15);
-    } completion:^(BOOL finished) {
-        
-        [UIView animateWithDuration:.4 delay:0 options:(UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut) animations:^{
-            self.recordButton.center = oldCenter;
-        } completion:^(BOOL finished) {
-            //[self animateDetailsIn];
-        }];
-    }];
     
 }
 
@@ -243,24 +261,29 @@
     [UIView animateWithDuration:.4 animations:^{
         self.artistLabel.alpha = 1;
         self.progressView.alpha = 1;
+        self.playButton.alpha = 0;
     }];
 }
 
 - (void)playSong {
-    self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(progressMade) userInfo:nil repeats:YES];
+    self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(progressMade) userInfo:nil repeats:YES];
     self.progressView.progress = 0;
-    
+    self.isPlaying = YES;
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
     
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"tick" withExtension:@"mp3"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"10 Voyager" withExtension:@"mp3"];
     
     NSError *error;
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-    self.audioPlayer.numberOfLoops = -1;
+    self.audioPlayer.numberOfLoops = 0;
+    [self.audioPlayer prepareToPlay];
+    [self.audioPlayer play];
 }
 
 - (void)stopSong {
+    //[self.loopProject addSongClip];
+    self.isPlaying = NO;
     [self.audioPlayer stop];
     [self.progressTimer invalidate];
     self.progressTimer = nil;

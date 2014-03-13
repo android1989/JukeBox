@@ -18,6 +18,7 @@
 @property (nonatomic, strong) CLMLoopViewController *loopViewController;
 @property (nonatomic, strong) CLMSearchViewController *searchViewController;
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UIView *blackView;
 @end
 
 @implementation CLMRootViewController
@@ -48,6 +49,7 @@
     [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width, 0)];
     [self.view addSubview:self.scrollView];
     
+    [self.view bringSubviewToFront:self.blackView];
     [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
         if (granted) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -58,6 +60,7 @@
                 self.loopViewController.delegate = self;
                 self.loopViewController.view.frame = CGRectMake(self.view.bounds.size.width, 0, 320, self.view.bounds.size.height);
                 [self.scrollView insertSubview:self.loopViewController.view atIndex:0];
+                [self.blackView removeFromSuperview];
             });
         } else {
             

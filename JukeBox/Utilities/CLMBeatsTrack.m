@@ -70,4 +70,15 @@ static CLMBeatsTrack *_sharedBeats = nil;
     }];
 }
 
+
+- (void)beatsTrackWith:(NSString *)trackId completionBlock:(echoNestCompletionBlock3)completionBlock {
+    NSString *finalPath = [NSString stringWithFormat:@"https://partner.api.beatsmusic.com/v1/api/tracks/%@/audio/httpd?acquire=0&access_token=b4dh8qa2ehrqyyhvayenkh7y", trackId];
+    finalPath = [finalPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [self GET:finalPath parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@", responseObject);
+        completionBlock();
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    }];
+}
+
 @end

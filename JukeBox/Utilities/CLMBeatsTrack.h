@@ -13,6 +13,7 @@
 typedef void (^beatsCompletionBlock)(NSArray *tracks);
 typedef void (^echoNestCompletionBlock1)(NSString *url);
 typedef void (^echoNestCompletionBlock2)(NSArray *bars);
+typedef void (^echoNestCompletionBlock3)(void);
 
 @interface CLMBeatsTrack : AFHTTPSessionManager
 
@@ -20,5 +21,6 @@ typedef void (^echoNestCompletionBlock2)(NSArray *bars);
 - (void)beatsWith:(NSString *)searchString completionBlock:(beatsCompletionBlock)completionBlock;
 - (void)echoNestGetURLFrom:(CLMTrackModel *)model completionBlock:(echoNestCompletionBlock1)completionBlock;
 - (void)echoNestGetBarsFrom:(NSString *)url completionBlock:(echoNestCompletionBlock2)completionBlock;
+- (void)beatsTrackWith:(NSString *)trackId completionBlock:(echoNestCompletionBlock3)completionBlock;
 
 @end

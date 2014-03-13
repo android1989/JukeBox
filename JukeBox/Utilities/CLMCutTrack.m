@@ -18,8 +18,9 @@
 + (void) cutTrack:(NSString *)file toFile:(NSString *)outputURL startingAt:(float)start forDuration:(float)duration withCompletion:(cutCompletionBlock)completionBlock {
     NSError *error;
     AVMutableComposition *voyager = [AVMutableComposition composition];
-    NSString *inputAudioPath = [[NSBundle mainBundle] pathForResource:file ofType:@"mp3"];
-    NSURL* audioURL = [NSURL fileURLWithPath:inputAudioPath];
+    
+    NSURL *audioURL = [[NSBundle mainBundle] URLForResource:file withExtension:@"mp3"];
+
     AVURLAsset* audioAsset1 = [[AVURLAsset alloc] initWithURL:audioURL options:nil];
     AVMutableCompositionTrack *compositionAudioTrack = [voyager addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
     [compositionAudioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero,CMTimeMakeWithSeconds(duration, kCMTimeMaxTimescale))
@@ -31,9 +32,26 @@
         NSLog(@"%@",error);
     } else {
         AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:[compositionAudioTrack asset] presetName:nil];
-        exportSession.outputURL = [NSURL URLWithString:outputURL];
+        
+        NSArray *pathComponents = [NSArray arrayWithObjects:
+                                   [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                                   [NSString stringWithFormat:@"%@.mp3", outputURL], nil];
+        NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+        exportSession.outputURL = outputFileURL;
+        
         [exportSession exportAsynchronouslyWithCompletionHandler:^{
-            completionBlock();
+            AVAssetExportSessionStatus exportStatus = exportSession.status;
+            
+            switch (exportStatus) {
+                case AVAssetExportSessionStatusCompleted: {
+                    completionBlock();
+                    break;
+                }
+                default: {
+                    NSLog(@"err: %@", exportSession.error);
+                    break;
+                }
+            }
         }];
     }
 }
