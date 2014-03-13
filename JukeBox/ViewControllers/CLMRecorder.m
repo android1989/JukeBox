@@ -32,7 +32,7 @@
 - (void)playPreBeat {
     CGFloat bars = 4;
     CGFloat beats = 4;
-    CGFloat beatsPerMinute = 100/60.0f;
+    CGFloat beatsPerMinute = 120/60.0f;
     CGFloat duration = 1.0f/beatsPerMinute;
     self.numberOfBeatsToRecord = bars*beats;
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];

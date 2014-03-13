@@ -12,4 +12,5 @@
 
 @property (nonatomic, strong) NSMutableArray *recordings;
 - (NSString *)nextRecordingFileName;
+- (void)addSongClip;
 @end

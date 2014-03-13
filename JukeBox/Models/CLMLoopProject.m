@@ -18,6 +18,10 @@
     return self;
 }
 
+- (void)addSongClip {
+    [_recordings addObject:@"10 Voyager.mp3"];
+}
+
 - (NSString *)nextRecordingFileName {
     NSString *fileName =  [NSString stringWithFormat:@"recording%lu", (unsigned long)[self.recordings count]];
     [self.recordings addObject:fileName];
