@@ -7,8 +7,9 @@
 //
 
 #import "CLMSearchViewController.h"
-#import "phil.h"
-@interface CLMSearchViewController ()
+#import "CLMTrackModel.h"
+
+@interface CLMSearchViewController () <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *artistField;
 @property (strong, nonatomic) IBOutlet UITextField *trackField;
@@ -39,9 +40,11 @@
 }
 
 -(IBAction)artistChanged:(id)sender{
-    if !(self.artistField.text = @"" ) {
-        <#statements#>
-    }
+
+}
+
+-(IBAction)trackChanged:(id)sender{
+    
 }
 
 @end

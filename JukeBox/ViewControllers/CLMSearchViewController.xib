@@ -20,6 +20,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
+                        <action selector="artistChanged:" destination="-1" eventType="editingChanged" id="7Jo-7c-ukC"/>
                         <outlet property="delegate" destination="i5M-Pr-FkT" id="BxO-Nk-DbR"/>
                     </connections>
                 </textField>
@@ -28,6 +29,10 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="trackChanged:" destination="-1" eventType="editingChanged" id="OZm-oq-hQB"/>
+                        <outlet property="delegate" destination="i5M-Pr-FkT" id="RDz-R1-Aii"/>
+                    </connections>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
