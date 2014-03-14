@@ -21,7 +21,7 @@ textarea {
 html {
     font-size: 1em;
     line-height: 1.4;
-    background-color: black;
+    background-color: black !important;
 }
 
 /*
@@ -105,8 +105,20 @@ textarea {
   color: white;
 }
 
-/* Small devices (tablets, 768px and up) */
-@media (max-width: @screen-sm-min) {
+
+@media (max-width: @screen-xs-max) { 
+  img { height: "320px"; width: "320px"; }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  img { height: "320px"; width: "320px"; }
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  img { height: "320px"; width: "320px"; }
+}
+
+@media (min-width: @screen-lg-min) {
   img { height: "320px"; width: "320px"; }
 }
 
