@@ -38,7 +38,7 @@
 {
     [super viewDidLoad];
     
-    NSURL *url = [NSURL URLWithString:@"https://partner.api.beatsmusic.com/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fwww.example.com&client_id=7cpdarw3d77gsjvjj7yup222"];
+    NSURL *url = [NSURL URLWithString:@"https://partner.api.beatsmusic.com/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fwww.example.com&client_id=538k54xdrc6xnq9rnf55uyts"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
     
@@ -86,7 +86,7 @@
 - (IBAction)login:(NSString *)scope code:(NSString *)code {
     // Do any additional setup after loading the view from its nib.
     NSURL *url = [NSURL URLWithString:@"https://partner.api.beatsmusic.com"];
-    GROAuth2SessionManager *oauthClient = [GROAuth2SessionManager managerWithBaseURL:url clientID:@"7cpdarw3d77gsjvjj7yup222" secret:@"ddJaY3KVyy9BXgCwmJtVapsD"];
+    GROAuth2SessionManager *oauthClient = [GROAuth2SessionManager managerWithBaseURL:url clientID:@"538k54xdrc6xnq9rnf55uyts" secret:@"Bzx6dRbzBvKX4Ce5yrxrpysE"];
     
     [oauthClient authenticateUsingOAuthWithPath:@"/oauth2/token" code:code redirectURI:@"https://www.example.com" success:^(AFOAuthCredential *credential) {
         NSLog(@"I have a token! %@", credential.accessToken);
