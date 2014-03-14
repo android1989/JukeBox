@@ -12,12 +12,13 @@
 #import <AVFoundation/AVFoundation.h>
 #import "CLMBeatsTrack.h"
 #import "CLMSearchViewController.h"
+#import "CLMLoginViewController.h"
 
-
-@interface CLMRootViewController () <UIScrollViewDelegate, CLMLooperControllerDelegate, CLMSearchViewControllerDelegate>
+@interface CLMRootViewController () <UIScrollViewDelegate, CLMLooperControllerDelegate, CLMSearchViewControllerDelegate, CLMLoginViewControllerDelegate>
 
 @property (nonatomic, strong) CLMLoopViewController *loopViewController;
 @property (nonatomic, strong) CLMSearchViewController *searchViewController;
+@property (nonatomic, strong) CLMLoginViewController *loginViewController;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UIView *blackView;
 @end
@@ -39,6 +40,9 @@
     [CLMMultipeerListener startUp];
     // Do any additional setup after loading the view from its nib.
 
+    self.loginViewController = [[CLMLoginViewController alloc] init];
+    self.loginViewController.delegate = self;
+    
     self.searchViewController = [[CLMSearchViewController alloc] init];
     self.searchViewController.delegate = self;
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
@@ -50,30 +54,12 @@
     [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width, 0)];
     [self.view addSubview:self.scrollView];
     
-    [self.view bringSubviewToFront:self.blackView];
-    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
-        if (granted) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.loopViewController = [[CLMLoopViewController alloc] init];
-                
-                [self addChildViewController:self.loopViewController];
-                [self.loopViewController willMoveToParentViewController:self];
-                self.loopViewController.delegate = self;
-                self.loopViewController.view.frame = CGRectMake(self.view.bounds.size.width, 0, 320, self.view.bounds.size.height);
-                [self.scrollView insertSubview:self.loopViewController.view atIndex:0];
-                [self.blackView removeFromSuperview];
-            });
-        } else {
-            
-        }
-    }];
-    [[CLMBeatsTrack sharedManager] beatsWith:@"voyager" completionBlock:^(NSArray *tracks) {
-        [[CLMBeatsTrack sharedManager] echoNestGetURLFrom:[tracks objectAtIndex:0] completionBlock:^(NSString *url) {
-            [[CLMBeatsTrack sharedManager] echoNestGetBarsFrom:url completionBlock:^(NSArray *bars) {
-                
-            }];
-        }];
-    }];
+    [self.view addSubview:self.blackView];
+    
+    [self addChildViewController:self.loginViewController];
+    [self.loopViewController willMoveToParentViewController:self];
+    [self.view addSubview:self.loginViewController.view];
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -102,5 +88,35 @@
     [self.scrollView setContentOffset:CGPointMake(self.view.bounds.size.width, 0) animated:YES];
     [self.loopViewController setCLMTrackModel:track];
     [self.searchViewController reset];
+}
+
+- (void)loginViewControllerDidLogin {
+    
+    [UIView animateWithDuration:.5 animations:^{
+        self.loginViewController.view.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self.loginViewController removeFromParentViewController];
+        [self.loginViewController.view removeFromSuperview];
+        [self.loginViewController didMoveToParentViewController:nil];
+        
+        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+            if (granted) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.loopViewController = [[CLMLoopViewController alloc] init];
+                    
+                    [self addChildViewController:self.loopViewController];
+                    [self.loopViewController willMoveToParentViewController:self];
+                    self.loopViewController.delegate = self;
+                    self.loopViewController.view.frame = CGRectMake(self.view.bounds.size.width, 0, 320, self.view.bounds.size.height);
+                    [self.scrollView insertSubview:self.loopViewController.view atIndex:0];
+                    [self.blackView removeFromSuperview];
+                });
+            } else {
+                
+            }
+        }];
+        
+    }];
+
 }
 @end

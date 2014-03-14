@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-librtmp-iOS.xcscheme</key>
+		<key>Pods-GROAuth2SessionManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,27 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>47CD90979D084194A541B0ED</key>
+		<key>67AF89EF888E437987000903</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66EA2228F93343FEA72A09BB</key>
+		<key>716C3C4C9DE04BDE859C2DBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9418DAB36F6D497E8CD9B710</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C281EAA5647746DAB6AED27A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C4BCE198E7FF49BCA0A24A1C</key>
+		<key>8F3FF1AE707B451AA8498FC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

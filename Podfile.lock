@@ -18,11 +18,15 @@ PODS:
   - AFNetworking/UIKit (2.2.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - GROAuth2SessionManager (0.2.1):
+    - AFNetworking (~> 2.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - GROAuth2SessionManager
 
 SPEC CHECKSUMS:
   AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56
+  GROAuth2SessionManager: ead3577ac5ee22f019e97472fe9e45759de4ad12
 
 COCOAPODS: 0.29.0

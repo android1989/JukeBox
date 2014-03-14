@@ -16,6 +16,9 @@
 		AF0F647A18D21F26007C8765 /* Full.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF0F647918D21F26007C8765 /* Full.mp3 */; };
 		AF0F647C18D21F37007C8765 /* mini.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF0F647B18D21F37007C8765 /* mini.mp3 */; };
 		AF0F647E18D22D2A007C8765 /* tick.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AF0F647D18D22D2A007C8765 /* tick.m4a */; };
+		AF0F648218D294A2007C8765 /* CLMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0F648018D294A2007C8765 /* CLMLoginViewController.m */; };
+		AF0F648318D294A2007C8765 /* CLMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF0F648118D294A2007C8765 /* CLMLoginViewController.xib */; };
+		AF0F648618D34325007C8765 /* CLMBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0F648518D34325007C8765 /* CLMBubbleView.m */; };
 		AF8A922418D0EEA800583A42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922318D0EEA800583A42 /* Foundation.framework */; };
 		AF8A922618D0EEA800583A42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922518D0EEA800583A42 /* CoreGraphics.framework */; };
 		AF8A922818D0EEA800583A42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A922718D0EEA800583A42 /* UIKit.framework */; };
@@ -1098,6 +1101,11 @@
 		AF0F647918D21F26007C8765 /* Full.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Full.mp3; sourceTree = "<group>"; };
 		AF0F647B18D21F37007C8765 /* mini.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mini.mp3; sourceTree = "<group>"; };
 		AF0F647D18D22D2A007C8765 /* tick.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tick.m4a; sourceTree = "<group>"; };
+		AF0F647F18D294A2007C8765 /* CLMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMLoginViewController.h; sourceTree = "<group>"; };
+		AF0F648018D294A2007C8765 /* CLMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMLoginViewController.m; sourceTree = "<group>"; };
+		AF0F648118D294A2007C8765 /* CLMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMLoginViewController.xib; sourceTree = "<group>"; };
+		AF0F648418D34325007C8765 /* CLMBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMBubbleView.h; sourceTree = "<group>"; };
+		AF0F648518D34325007C8765 /* CLMBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMBubbleView.m; sourceTree = "<group>"; };
 		AF8A922018D0EEA800583A42 /* JukeBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JukeBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8A922318D0EEA800583A42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF8A922518D0EEA800583A42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -2334,6 +2342,9 @@
 				AF8A927018D127BA00583A42 /* CLMLoopViewController.xib */,
 				AF8A927518D130CD00583A42 /* CLMRecorder.h */,
 				AF8A927618D130CD00583A42 /* CLMRecorder.m */,
+				AF0F647F18D294A2007C8765 /* CLMLoginViewController.h */,
+				AF0F648018D294A2007C8765 /* CLMLoginViewController.m */,
+				AF0F648118D294A2007C8765 /* CLMLoginViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2347,6 +2358,8 @@
 				AF8A927B18D1425B00583A42 /* CLMTrackCell.h */,
 				AF8A927C18D1425B00583A42 /* CLMTrackCell.m */,
 				AF8A927E18D1426800583A42 /* CLMTrackCell.xib */,
+				AF0F648418D34325007C8765 /* CLMBubbleView.h */,
+				AF0F648518D34325007C8765 /* CLMBubbleView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -4506,6 +4519,7 @@
 				AF8A9A0C18D1F83100583A42 /* dots_896.png in Resources */,
 				AF8A96B718D1F83000583A42 /* dots_120.png in Resources */,
 				AF8A98F318D1F83000583A42 /* dots_640.png in Resources */,
+				AF0F648318D294A2007C8765 /* CLMLoginViewController.xib in Resources */,
 				AF8A97A118D1F83000583A42 /* dots_333.png in Resources */,
 				AF8A98B418D1F83000583A42 /* dots_583.png in Resources */,
 				AF8A977018D1F83000583A42 /* dots_289.png in Resources */,
@@ -4586,12 +4600,14 @@
 				AF8A923418D0EEA800583A42 /* CLMAppDelegate.m in Sources */,
 				AF8A927718D130CD00583A42 /* CLMRecorder.m in Sources */,
 				49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */,
+				AF0F648218D294A2007C8765 /* CLMLoginViewController.m in Sources */,
 				AF8A925E18D0F69000583A42 /* CLMMultipeerListener.m in Sources */,
 				1DCFA11018D2055300A1DE7D /* CLMCutAVideo.m in Sources */,
 				AF8A926718D0FC6400583A42 /* CLMBrowserViewController.m in Sources */,
 				AF8A930F18D1E57800583A42 /* CLMSearchViewController.m in Sources */,
 				49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */,
 				AF8A925918D0F10500583A42 /* CLMRootViewController.m in Sources */,
+				AF0F648618D34325007C8765 /* CLMBubbleView.m in Sources */,
 				AF8A927118D127BA00583A42 /* CLMLoopViewController.m in Sources */,
 				AF8A930B18D1DEB000583A42 /* CLMRtmp.m in Sources */,
 			);
