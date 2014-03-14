@@ -84,8 +84,9 @@
         self.micSamplingTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(levelTimerCallback:) userInfo:nil repeats:YES];
     }
     
-    [audioPlayer play];
+    //[audioPlayer play];
     
+    [self.delegate recorder:self hitBeat:self.count];
     if (self.numberOfBeatsToRecord+4 == self.count) {
         [self stopRecording];
     }

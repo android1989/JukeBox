@@ -26,6 +26,8 @@
 @property (nonatomic, strong) IBOutlet UIProgressView *progressView;
 @property (nonatomic, strong) IBOutlet UILabel *artistLabel;
 
+@property (nonatomic, strong) IBOutlet UIView *tempoView;
+
 @property (nonatomic, strong) CLMTrackModel *trackModel;
 @property (nonatomic, strong) NSTimer *progressTimer;
 
@@ -213,8 +215,10 @@
 }
 
 - (void)recorder:(CLMRecorder *)recoder peakLevel:(CGFloat)level {
-    self.recordingAnimation.transform = CGAffineTransformMakeScale(2+level, 2+level);
-    self.recordButton.transform = CGAffineTransformMakeScale(1+level, 1+level);
+    [UIView animateWithDuration:.2 animations:^{
+        self.recordingAnimation.transform = CGAffineTransformMakeScale(2+level, 2+level);
+        self.recordButton.transform = CGAffineTransformMakeScale(1+level, 1+level);
+    }];
 }
 
 - (void)animateIn {
@@ -288,5 +292,14 @@
 
 - (void)progressMade {
     self.progressView.progress += .01;
+}
+
+- (void)recorder:(CLMRecorder *)recoder hitBeat:(NSInteger)beat {
+    self.tempoView.alpha = 1;
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        self.tempoView.alpha = 0;
+    });
 }
 @end
