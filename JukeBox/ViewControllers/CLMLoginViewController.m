@@ -42,8 +42,10 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
     
-    self.loginButton.titleLabel.font = [UIFont fontWithName:@"KenyanCoffeeRg-Regular" size:36];
-    
+    self.loginButton.titleLabel.font = [UIFont fontWithName:@"KenyanCoffeeRg-Regular" size:23];
+    self.loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.loginButton.layer.cornerRadius = 12;
+    self.loginButton.layer.borderWidth = 1;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
