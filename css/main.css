@@ -105,6 +105,11 @@ textarea {
   color: white;
 }
 
+/* Small devices (tablets, 768px and up) */
+@media (max-width: @screen-sm-min) {
+  img { height: "320px"; width: "320px"; }
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
