@@ -24,6 +24,10 @@ html {
     background-color: black !important;
 }
 
+body {
+  background-color: black !important;
+}
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
