@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DCFA11018D2055300A1DE7D /* CLMCutAVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCFA10F18D2055300A1DE7D /* CLMCutAVideo.m */; };
+		1DCFA11018D2055300A1DE7D /* CLMCutATrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCFA10F18D2055300A1DE7D /* CLMCutATrack.m */; };
 		1DCFA11218D2065300A1DE7D /* 10 Voyager.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFA11118D2065300A1DE7D /* 10 Voyager.mp3 */; };
 		49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDA18D141C500B8918B /* CLMTrackModel.m */; };
 		49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */; };
@@ -115,7 +115,6 @@
 		AF8A930618D1882A00583A42 /* small_00021.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A92EF18D1882900583A42 /* small_00021.png */; };
 		AF8A930718D1882A00583A42 /* small_00022.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A92F018D1882900583A42 /* small_00022.png */; };
 		AF8A930818D1882A00583A42 /* small_00023.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A92F118D1882900583A42 /* small_00023.png */; };
-		AF8A930B18D1DEB000583A42 /* CLMRtmp.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A930A18D1DEB000583A42 /* CLMRtmp.m */; };
 		AF8A930F18D1E57800583A42 /* CLMSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8A930D18D1E57800583A42 /* CLMSearchViewController.m */; };
 		AF8A931018D1E57800583A42 /* CLMSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8A930E18D1E57800583A42 /* CLMSearchViewController.xib */; };
 		AF8A969618D1F83000583A42 /* dots_00.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8A931218D1F82A00583A42 /* dots_00.png */; };
@@ -1089,8 +1088,8 @@
 
 /* Begin PBXFileReference section */
 		0C6EA73567BC41439D45224F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		1DCFA10E18D2055300A1DE7D /* CLMCutAVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMCutAVideo.h; sourceTree = "<group>"; };
-		1DCFA10F18D2055300A1DE7D /* CLMCutAVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMCutAVideo.m; sourceTree = "<group>"; };
+		1DCFA10E18D2055300A1DE7D /* CLMCutATrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMCutATrack.h; sourceTree = "<group>"; };
+		1DCFA10F18D2055300A1DE7D /* CLMCutATrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMCutATrack.m; sourceTree = "<group>"; };
 		1DCFA11118D2065300A1DE7D /* 10 Voyager.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10 Voyager.mp3"; sourceTree = "<group>"; };
 		49AD0CDA18D141C500B8918B /* CLMTrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMTrackModel.m; sourceTree = "<group>"; };
 		49AD0CDB18D141C500B8918B /* CLMTrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMTrackModel.h; sourceTree = "<group>"; };
@@ -1215,8 +1214,6 @@
 		AF8A92EF18D1882900583A42 /* small_00021.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_00021.png; sourceTree = "<group>"; };
 		AF8A92F018D1882900583A42 /* small_00022.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_00022.png; sourceTree = "<group>"; };
 		AF8A92F118D1882900583A42 /* small_00023.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_00023.png; sourceTree = "<group>"; };
-		AF8A930918D1DEB000583A42 /* CLMRtmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMRtmp.h; sourceTree = "<group>"; };
-		AF8A930A18D1DEB000583A42 /* CLMRtmp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMRtmp.m; sourceTree = "<group>"; };
 		AF8A930C18D1E57800583A42 /* CLMSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMSearchViewController.h; sourceTree = "<group>"; };
 		AF8A930D18D1E57800583A42 /* CLMSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMSearchViewController.m; sourceTree = "<group>"; };
 		AF8A930E18D1E57800583A42 /* CLMSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMSearchViewController.xib; sourceTree = "<group>"; };
@@ -2312,10 +2309,8 @@
 		AF8A925318D0F09F00583A42 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1DCFA10E18D2055300A1DE7D /* CLMCutAVideo.h */,
-				1DCFA10F18D2055300A1DE7D /* CLMCutAVideo.m */,
-				AF8A930918D1DEB000583A42 /* CLMRtmp.h */,
-				AF8A930A18D1DEB000583A42 /* CLMRtmp.m */,
+				1DCFA10E18D2055300A1DE7D /* CLMCutATrack.h */,
+				1DCFA10F18D2055300A1DE7D /* CLMCutATrack.m */,
 				49AD0CDD18D141D000B8918B /* CLMBeatsTrack.m */,
 				49AD0CDE18D141D000B8918B /* CLMBeatsTrack.h */,
 				AF8A925B18D0F66B00583A42 /* MultipeerListener */,
@@ -4602,14 +4597,13 @@
 				49AD0CDC18D141C500B8918B /* CLMTrackModel.m in Sources */,
 				AF0F648218D294A2007C8765 /* CLMLoginViewController.m in Sources */,
 				AF8A925E18D0F69000583A42 /* CLMMultipeerListener.m in Sources */,
-				1DCFA11018D2055300A1DE7D /* CLMCutAVideo.m in Sources */,
+				1DCFA11018D2055300A1DE7D /* CLMCutATrack.m in Sources */,
 				AF8A926718D0FC6400583A42 /* CLMBrowserViewController.m in Sources */,
 				AF8A930F18D1E57800583A42 /* CLMSearchViewController.m in Sources */,
 				49AD0CDF18D141D000B8918B /* CLMBeatsTrack.m in Sources */,
 				AF8A925918D0F10500583A42 /* CLMRootViewController.m in Sources */,
 				AF0F648618D34325007C8765 /* CLMBubbleView.m in Sources */,
 				AF8A927118D127BA00583A42 /* CLMLoopViewController.m in Sources */,
-				AF8A930B18D1DEB000583A42 /* CLMRtmp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
