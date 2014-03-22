@@ -10,6 +10,8 @@
 #import "CLMLoopProject.h"
 #import "CLMRecorder.h"
 #import "CLMTrackCell.h"
+#import "CLMBeatsTrack.h"
+
 
 @interface CLMLoopViewController () <CLMRecorderDelegate, UICollectionViewDelegate>
 
@@ -251,6 +253,12 @@
     _trackModel = trackModel;
     self.artistLabel.text = [NSString stringWithFormat:@"%@, %@", trackModel.display, trackModel.detail];
     self.progressView.progress = 0;
+
+    CLMBeatsTrack *beatsTrack = [CLMBeatsTrack sharedManager];
+    [beatsTrack beatsTrackWith:trackModel.beatId completionBlock:^(NSString *mp3) {
+        //noop
+    }];
+
     [UIView animateWithDuration:.4 animations:^{
         self.artistLabel.alpha = 1;
         self.progressView.alpha = 1;
