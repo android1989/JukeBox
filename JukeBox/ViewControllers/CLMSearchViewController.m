@@ -13,8 +13,8 @@
 
 @interface CLMSearchViewController () <UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextField *artistField;
-@property (strong, nonatomic) IBOutlet UITextField *trackField;
+@property (strong, nonatomic) IBOutlet UITextField *searchField;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (nonatomic, strong) NSArray *results;
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @end
@@ -79,20 +79,19 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == self.trackField) {
-        [textField resignFirstResponder];
-        [[CLMBeatsTrack sharedManager] beatsWith:[NSString stringWithFormat:@"%@+%@", self.trackField.text, self.artistField.text] completionBlock:^(NSArray *tracks) {
-            self.results = tracks;
-            [self.collectionView reloadData]; 
-        }];
-    }
+    [textField resignFirstResponder];
+    [self.spinner startAnimating];
+    [[CLMBeatsTrack sharedManager] beatsWith:[NSString stringWithFormat:@"%@", self.searchField.text] completionBlock:^(NSArray *tracks) {
+        [self.spinner stopAnimating];
+        self.results = tracks;
+        [self.collectionView reloadData];
+    }];
     
     return NO;
 }
 
 - (void)reset {
-    self.artistField.text = 0;
-    self.trackField.text = 0;
+    self.searchField.text = 0;
     self.results = nil;
     [self.collectionView reloadData];
     [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
