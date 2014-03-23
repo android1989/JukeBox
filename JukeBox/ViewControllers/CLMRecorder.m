@@ -84,7 +84,8 @@
         self.micSamplingTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(levelTimerCallback:) userInfo:nil repeats:YES];
     }
     
-    //[audioPlayer play];
+    if ([self isHeadsetPluggedIn])
+        [audioPlayer play];
     
     [self.delegate recorder:self hitBeat:self.count];
     if (self.numberOfBeatsToRecord+4 == self.count) {
@@ -93,6 +94,18 @@
     
     
 }
+
+
+- (BOOL)isHeadsetPluggedIn {
+    AVAudioSessionRouteDescription *route = [[AVAudioSession sharedInstance] currentRoute];
+    
+    BOOL headphonesLocated = NO;
+    for ( AVAudioSessionPortDescription *portDescription in route.outputs ) {
+        headphonesLocated |= ( [portDescription.portType isEqualToString:AVAudioSessionPortHeadphones] );
+    }
+    return headphonesLocated;
+}
+
 
 - (void)levelTimerCallback:(NSTimer *)timer {
 	[audioRecorder updateMeters];
