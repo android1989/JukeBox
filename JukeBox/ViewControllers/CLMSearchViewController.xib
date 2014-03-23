@@ -6,9 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CLMSearchViewController">
             <connections>
-                <outlet property="artistField" destination="3XE-zs-h3z" id="XCa-sZ-oxv"/>
                 <outlet property="collectionView" destination="9EZ-xX-IQQ" id="jej-kI-X0w"/>
-                <outlet property="trackField" destination="A5u-ff-eCD" id="YWr-FJ-sQB"/>
+                <outlet property="searchField" destination="3XE-zs-h3z" id="0r6-Ii-IPN"/>
+                <outlet property="spinner" destination="VcD-WM-Bhm" id="ce8-0a-cfF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,24 +17,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3XE-zs-h3z">
-                    <rect key="frame" x="20" y="27" width="280" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist / Song" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3XE-zs-h3z">
+                    <rect key="frame" x="20" y="37" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <action selector="artistChanged:" destination="-1" eventType="editingChanged" id="7Jo-7c-ukC"/>
                         <outlet property="delegate" destination="-1" id="ab2-FB-L7a"/>
-                    </connections>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Track" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A5u-ff-eCD">
-                    <rect key="frame" x="20" y="65" width="280" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="trackChanged:" destination="-1" eventType="editingChanged" id="OZm-oq-hQB"/>
-                        <outlet property="delegate" destination="-1" id="H1b-lS-otm"/>
                     </connections>
                 </textField>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9EZ-xX-IQQ">
@@ -53,6 +43,10 @@
                         <outlet property="delegate" destination="-1" id="p49-Fk-cH1"/>
                     </connections>
                 </collectionView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VcD-WM-Bhm">
+                    <rect key="frame" x="142" y="265" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
