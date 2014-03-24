@@ -17,6 +17,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *errorLabel;
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) IBOutlet UIButton *loginButton;
+@property (nonatomic, strong) IBOutlet UIButton *skipButton;
 @property (nonatomic, strong) IBOutlet CLMBubbleView *bubble1;
 @property (nonatomic, strong) IBOutlet CLMBubbleView *bubble2;
 @property (nonatomic, strong) IBOutlet CLMBubbleView *bubble3;
@@ -105,6 +106,10 @@
 - (IBAction)dismissTextFields:(id)sender {
     [self.passwordTextField resignFirstResponder];
     [self.usernameTextField resignFirstResponder];
+}
+
+- (IBAction)skip:(id)sender {
+    [self.delegate loginViewControllerDidSkip];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {

@@ -90,8 +90,11 @@
     [self.searchViewController reset];
 }
 
+- (void)loginViewControllerDidSkip {
+    [self loginViewControllerDidLogin];
+}
+
 - (void)loginViewControllerDidLogin {
-    
     [UIView animateWithDuration:.5 animations:^{
         self.loginViewController.view.alpha = 0;
     } completion:^(BOOL finished) {
@@ -117,6 +120,6 @@
         }];
         
     }];
-
 }
+
 @end
