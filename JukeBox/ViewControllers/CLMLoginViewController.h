@@ -18,5 +18,6 @@
 @protocol  CLMLoginViewControllerDelegate <NSObject>
 
 - (void)loginViewControllerDidLogin;
+- (void)loginViewControllerDidSkip;
 
 @end
