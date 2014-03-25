@@ -35,10 +35,12 @@
 - (void)playRecording;
 - (void)stopPlaying;
 - (BOOL)isRecording;
+- (BOOL)isHeadsetPluggedIn;
 @end
 
 @protocol CLMRecorderDelegate <NSObject>
 - (void)recorder:(CLMRecorder *)recoder peakLevel:(CGFloat)level;
+- (void)recordingAndPlay;
 - (void)recorderdidStopRecording:(CLMRecorder *)recoder;
 - (void)recorder:(CLMRecorder *)recoder hitBeat:(NSInteger)beat;
 @end

@@ -81,11 +81,15 @@
     self.count ++;
     if (self.count == 4) {
         [self beginRecording];
+        if ([self isHeadsetPluggedIn]) {
+            [self.delegate recordingAndPlay];
+        }
         self.micSamplingTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(levelTimerCallback:) userInfo:nil repeats:YES];
     }
     
-    if ([self isHeadsetPluggedIn])
+    if ([self isHeadsetPluggedIn]) {
         [audioPlayer play];
+    }
     
     [self.delegate recorder:self hitBeat:self.count];
     if (self.numberOfBeatsToRecord+4 == self.count) {

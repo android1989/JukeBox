@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>643C7545-4996-47F6-8EBC-AB18BAF3D17C</string>
+	<string>2F60D814-08C8-43F7-B21F-B3F7ECFC762E</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Jukebox</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>CAB5FD29-36FC-46AB-86D9-264723F897F7</key>
-		<string>https://github.com/android1989/JukeBox.git</string>
+		<key>F4C2210B-407D-449C-A042-4AAB63AFDF9A</key>
+		<string>https://github.com/android1989/Moot.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Jukebox.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>CAB5FD29-36FC-46AB-86D9-264723F897F7</key>
+		<key>F4C2210B-407D-449C-A042-4AAB63AFDF9A</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/android1989/JukeBox.git</string>
+	<string>https://github.com/android1989/Moot.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>CAB5FD29-36FC-46AB-86D9-264723F897F7</string>
+	<string>F4C2210B-407D-449C-A042-4AAB63AFDF9A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>CAB5FD29-36FC-46AB-86D9-264723F897F7</string>
+			<string>F4C2210B-407D-449C-A042-4AAB63AFDF9A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>JukeBox</string>
+			<string>Moot</string>
 		</dict>
 	</array>
 </dict>

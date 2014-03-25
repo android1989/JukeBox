@@ -155,37 +155,54 @@
 
 - (IBAction)playButtonTouchUpInside:(id)sender {
     if (self.isPlaying) {
-        for (CLMTrackCell *track in self.collectionView.visibleCells) {
-            [track stop];
-        }
-        [self.playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
-        self.isPlaying = NO;
+        [self stopLoop];
     }else{
-        for (CLMTrackCell *track in self.collectionView.visibleCells) {
-            [track play];
-        }
-        [self.playButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
-        self.isPlaying = YES;
+        [self playLoop];
     }
+}
+
+
+- (void)stopLoop {
+    for (CLMTrackCell *track in self.collectionView.visibleCells) {
+        [track stop];
+    }
+    [self.playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+    self.isPlaying = NO;
+}
+
+
+- (void)playLoop {
+    if (self.isPlaying) {
+        [self stopLoop];
+    }
+
+    for (CLMTrackCell *track in self.collectionView.visibleCells) {
+        [track play];
+    }
+    [self.playButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+    self.isPlaying = YES;
 }
 
 - (IBAction)playPauseTouchUpInside:(id)sender {
     if ([self.recorder isRecording]) {
         
     }else{
-        if (self.isPlaying && self.trackModel) {
-            [self stopSong];
-            [self recorderdidStopRecording:nil];
+        if (self.isPlaying) {
+            if (self.trackModel) {
+                [self stopSong];
+                [self recorderdidStopRecording:nil];
+            } else {
+                [self stopLoop];
+            }
             return;
         }
         
         [self animateDetailsOut];
         [self.delegate didBeginRecording];
         
-        
         if (self.trackModel) {
             [self playSong];
-        }else{
+        } else {
             [self.recorder startRecording];
         }
         
@@ -212,6 +229,9 @@
     
     [self.delegate didStopRecording];
     [self animateDetailsIn];
+    if (self.isPlaying) {
+        [self playLoop];
+    }
 }
 
 - (void)recorder:(CLMRecorder *)recoder peakLevel:(CGFloat)level {
@@ -292,6 +312,12 @@
 
 - (void)progressMade {
     self.progressView.progress += .01;
+}
+
+
+// the countin is managed by CLMRecorder, this is the "event" when recording actually happens.
+- (void)recordingAndPlay {
+    [self playLoop];
 }
 
 - (void)recorder:(CLMRecorder *)recoder hitBeat:(NSInteger)beat {
