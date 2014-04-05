@@ -10,7 +10,6 @@
 #import "CLMLoopViewController.h"
 #import "CLMMultipeerListener.h"
 #import <AVFoundation/AVFoundation.h>
-#import "CLMBeatsTrack.h"
 #import "CLMSearchViewController.h"
 #import "CLMLoginViewController.h"
 

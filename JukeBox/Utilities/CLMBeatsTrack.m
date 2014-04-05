@@ -8,6 +8,8 @@
 
 #import "CLMBeatsTrack.h"
 #import <AFNetworking/AFNetworking.h>
+#import <GROAuth2SessionManager/GROAuth2SessionManager.h>
+
 
 static CLMBeatsTrack *_sharedBeats = nil;
 
@@ -46,7 +48,20 @@ static CLMBeatsTrack *_sharedBeats = nil;
 }
 
 
-- (void)echoNestGetURLFrom:(CLMTrackModel *)model completionBlock:(echoNestCompletionBlock1)completionBlock {
+- (void)beatsTrackWith:(NSString *)trackId completionBlock:(beatsCompletionBlock2)completionBlock {
+    AFOAuthCredential *credentials = [AFOAuthCredential retrieveCredentialWithIdentifier:@"partner.api.beatsmusic.com"];
+    NSString *finalPath = [NSString stringWithFormat:@"https://partner.api.beatsmusic.com/v1/api/tracks/%@/audio/httpd?acquire=0&access_token=%@", trackId, credentials.accessToken];
+    finalPath = [finalPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [self GET:finalPath parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@", responseObject[@"data"][@"location"]);
+        completionBlock(responseObject[@"data"][@"location"]);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"err %@", error);
+    }];
+}
+
+
+- (void)echoNestGetURLFrom:(CLMTrackModel *)model completionBlock:(echoNestCompletionBlock)completionBlock {
     NSLog(@"%@ by %@", model.display, model.detail);
     NSString *finalPath = [NSString stringWithFormat:@"http://developer.echonest.com/api/v4/song/search?api_key=YEDAAGNGLIRV8WD15&format=json&results=1&artist=%@&title=%@&bucket=id:mog&bucket=audio_summary&bucket=tracks", model.detail, model.display];
     [self GET:[finalPath stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {

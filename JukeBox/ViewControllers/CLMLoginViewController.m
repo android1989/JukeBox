@@ -90,7 +90,12 @@
     NSURL *url = [NSURL URLWithString:@"https://partner.api.beatsmusic.com"];
     GROAuth2SessionManager *oauthClient = [GROAuth2SessionManager managerWithBaseURL:url clientID:@"538k54xdrc6xnq9rnf55uyts" secret:@"Bzx6dRbzBvKX4Ce5yrxrpysE"];
     
-    [oauthClient authenticateUsingOAuthWithPath:@"/oauth2/token" code:code redirectURI:@"https://www.example.com" success:^(AFOAuthCredential *credential) {
+    [oauthClient authenticateUsingOAuthWithPath:@"/oauth2/token" parameters:@{@"client_secret": @"Bzx6dRbzBvKX4Ce5yrxrpysE",
+                                                                              @"client_id": @"538k54xdrc6xnq9rnf55uyts",
+                                                                              @"redirect_uri": @"https://www.example.com",
+                                                                              @"code": code,
+                                                                              @"grant_type": @"authorization_code"}
+                                        success:^(AFOAuthCredential *credential) {
         NSLog(@"I have a token! %@", credential.accessToken);
         [AFOAuthCredential storeCredential:credential withIdentifier:oauthClient.serviceProviderIdentifier];
         [self.delegate loginViewControllerDidLogin];
