@@ -12,6 +12,6 @@ typedef void (^cutCompletionBlock)(void);
 
 @interface CLMCutTrack : NSObject
 
-+ (void) cutTrack:(NSString *)file toFile:(NSString *)outputURL startingAt:(float)start forDuration:(float)duration withCompletion:(cutCompletionBlock)completionBlock;
++ (void)cutFile:(NSString *)inputURLstring toFile:(NSString *)outputURLstring startingAt:(float)start forDuration:(float)duration withCompletion:(cutCompletionBlock)completionBlock;
 
 @end

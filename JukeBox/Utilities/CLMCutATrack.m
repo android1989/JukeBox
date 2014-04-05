@@ -15,45 +15,37 @@
 
 @implementation CLMCutTrack
 
-+ (void) cutTrack:(NSString *)file toFile:(NSString *)outputURL startingAt:(float)start forDuration:(float)duration withCompletion:(cutCompletionBlock)completionBlock {
-    NSError *error;
-    AVMutableComposition *voyager = [AVMutableComposition composition];
++ (void)cutFile:(NSString *)inputURLstring toFile:(NSString *)outputURLstring startingAt:(float)start forDuration:(float)duration withCompletion:(cutCompletionBlock)completionBlock {
+    NSURL *inputURL = [NSURL URLWithString:inputURLstring];
+    NSURL *outputURL = [NSURL URLWithString:outputURLstring];
     
-    NSURL *audioURL = [[NSBundle mainBundle] URLForResource:file withExtension:@"mp3"];
+    AVURLAsset *asset = [AVURLAsset URLAssetWithURL:inputURL options:nil];
+    NSLog(@"asset timeRange: %lld, %lld", kCMTimeZero.value, asset.duration.value);
     
-    AVURLAsset* audioAsset1 = [[AVURLAsset alloc] initWithURL:audioURL options:nil];
-    AVMutableCompositionTrack *compositionAudioTrack = [voyager addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
-    [compositionAudioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero,CMTimeMakeWithSeconds(duration, kCMTimeMaxTimescale))
-                                   ofTrack:[[audioAsset1 tracksWithMediaType:AVMediaTypeAudio]objectAtIndex:0]
-                                    atTime:CMTimeMakeWithSeconds(start, kCMTimeMaxTimescale)
-                                     error:&error];
-    
-    if (error) {
-        NSLog(@"%@",error);
-    } else {
-        AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:[compositionAudioTrack asset] presetName:nil];
-        
-        NSArray *pathComponents = [NSArray arrayWithObjects:
-                                   [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                                   [NSString stringWithFormat:@"%@.mp3", outputURL], nil];
-        NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-        exportSession.outputURL = outputFileURL;
-        
-        [exportSession exportAsynchronouslyWithCompletionHandler:^{
-            AVAssetExportSessionStatus exportStatus = exportSession.status;
-            
-            switch (exportStatus) {
-                case AVAssetExportSessionStatusCompleted: {
-                    completionBlock();
-                    break;
-                }
-                default: {
-                    NSLog(@"err: %@", exportSession.error);
-                    break;
-                }
-            }
-        }];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:outputURLstring]) {
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtURL:outputURL error:&error];
+        if (error) {
+            NSLog(@"remove outputURL error: %@", error);
+        }
     }
+    
+    AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:asset presetName:AVAssetExportPresetAppleM4A];
+    exportSession.timeRange = CMTimeRangeMake(CMTimeMakeWithSeconds(start, kCMTimeMaxTimescale), CMTimeMakeWithSeconds(duration, kCMTimeMaxTimescale));
+    exportSession.outputURL = outputURL;
+    exportSession.outputFileType = AVFileTypeAppleM4A;
+    
+    __weak AVAssetExportSession* weakSession = exportSession;
+    [exportSession exportAsynchronouslyWithCompletionHandler:^(void){
+        if (weakSession.status != AVAssetExportSessionStatusCompleted) {
+            NSLog(@"Error exporting: %@", weakSession.error);
+            return;
+        }
+        
+        if (completionBlock) {
+            completionBlock();
+        }
+    }];
 }
 
 @end

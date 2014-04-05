@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "CLMCutATrack.h"
 
 @interface JukeBoxTests : XCTestCase
 
@@ -26,9 +27,16 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+- (void)test {
+    NSURL *inputURL = [[NSBundle mainBundle] URLForResource:@"Full" withExtension:@"mp3"];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [paths objectAtIndex:0];
+    NSString *outputPath = [NSString pathWithComponents:@[path, @"output.m4a"]];
+    NSURL *outputURL = [NSURL fileURLWithPath:outputPath];
+    
+    [CLMCutTrack cutFile:[inputURL absoluteString] toFile:[outputURL absoluteString] startingAt:10 forDuration:10 withCompletion:nil];
+    XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:outputPath]);
 }
 
 @end
